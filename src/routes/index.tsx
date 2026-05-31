@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   Phone, MapPin, Clock, Sparkles, Shield, Droplets, Car, Wrench,
-  Sofa, Wind, Gem, CheckCircle2, ArrowRight, Star,
+  Sofa, Wind, Gem, CheckCircle2, ArrowRight, Star, Menu, X,
 } from "lucide-react";
 import heroCar from "@/assets/hero-car.jpg";
 import detailing from "@/assets/detailing.jpg";

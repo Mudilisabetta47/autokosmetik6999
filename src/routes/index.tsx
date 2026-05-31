@@ -462,7 +462,7 @@ function Footer() {
     <footer className="bg-[oklch(0.16_0.05_258)] text-primary-foreground">
       <div className="container-x py-16 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
-          <img src={logoDark} alt="autokosmetik Lilienthal" className="h-16 w-auto" />
+          <FooterLogo />
           <p className="mt-5 text-sm leading-relaxed text-white/65 max-w-sm">
             Inhabergeführte KFZ-Aufbereitung in Lilienthal. Mit Sorgfalt, hochwertigen
             Produkten und ehrlicher Beratung – für Privatkunden und Fahrzeughändler.

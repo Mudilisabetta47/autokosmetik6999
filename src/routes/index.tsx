@@ -177,6 +177,7 @@ function Nav() {
     { href: "#leistungen", label: "Leistungen" },
     { href: "#warum", label: "Warum wir" },
     { href: "#galerie", label: "Vorher / Nachher" },
+    { href: "#bewertungen", label: "Bewertungen" },
     { href: "#faq", label: "Wissen & FAQ" },
     { href: "#kontakt", label: "Kontakt" },
   ];

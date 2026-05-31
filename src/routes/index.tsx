@@ -418,5 +418,67 @@ function Footer() {
   );
 }
 
-// Hidden interior image preload reference (kept for design parity)
-void interior;
+const pairs = [
+  { id: "lack", title: "Lackaufbereitung", desc: "Politur, Reinigung und Pflege für tiefen Glanz statt matter, verschmutzter Oberflächen.", before: beforePaint, after: afterPaint },
+  { id: "innen", title: "Innenraum", desc: "Aussaugen, Polsterreinigung und Aufbereitung – aus verschmutzt wird gepflegt und hygienisch.", before: beforeInterior, after: interior },
+  { id: "siegel", title: "Versiegelung", desc: "Wasser perlt vom Lack ab statt zu verlaufen – sichtbarer Schutz und intensiver Glanz.", before: beforeSeal, after: wax },
+];
+
+const galleryShots = [
+  { src: galleryTaycan, label: "Porsche Taycan" },
+  { src: galleryLambo, label: "Lamborghini Huracán" },
+  { src: gallery911, label: "Porsche 911 Turbo" },
+  { src: galleryMustang, label: "Ford Mustang GT" },
+];
+
+function Gallery() {
+  return (
+    <section id="galerie" className="py-20 md:py-28 bg-secondary">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent-foreground/80">Vorher / Nachher</span>
+          <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-primary">
+            Sichtbare Ergebnisse
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg">
+            Ziehen Sie den Slider, um den Unterschied vor und nach unserer Aufbereitung zu sehen –
+            für Lack, Innenraum und Versiegelung.
+          </p>
+        </div>
+
+        <div className="mt-12 grid lg:grid-cols-3 gap-8">
+          {pairs.map((p) => (
+            <div key={p.id} className="flex flex-col">
+              <BeforeAfter before={p.before} after={p.after} alt={p.title} />
+              <h3 className="mt-5 text-xl font-bold text-primary">{p.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-20">
+          <div className="flex items-end justify-between flex-wrap gap-4">
+            <div>
+              <span className="text-sm font-semibold uppercase tracking-wider text-accent-foreground/80">Detail-Galerie</span>
+              <h3 className="mt-2 text-2xl md:text-3xl font-extrabold text-primary">Aufbereitete Fahrzeuge aus Lilienthal</h3>
+            </div>
+            <a href={`tel:${TEL}`} className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold hover:opacity-90 transition">
+              <Phone className="h-4 w-4" /> Ihr Auto anmelden
+            </a>
+          </div>
+
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {galleryShots.map((g) => (
+              <figure key={g.label} className="group relative aspect-square overflow-hidden rounded-2xl bg-card" style={{ boxShadow: "var(--shadow-card)" }}>
+                <img src={g.src} alt={g.label} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
+                <figcaption className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white opacity-0 group-hover:opacity-100 transition">{g.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+

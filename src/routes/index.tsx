@@ -175,6 +175,8 @@ function Index() {
       <Why />
       <Gallery />
       <SalesPrep />
+      <SeoContent />
+      <Faq />
       <Contact />
       <Footer />
     </div>

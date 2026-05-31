@@ -192,13 +192,13 @@ function Nav() {
         </div>
       </header>
 
-      {/* Sticky mobile call bar */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 translate-y-[100%] transition-transform duration-300" id="mobile-call-bar">
-        <div className="bg-primary border-b border-white/10 shadow-lg">
-          <div className="container-x py-2.5">
+      {/* Sticky mobile call bar — fixed bottom, always visible on scroll */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50">
+        <div className="bg-primary border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.25)]">
+          <div className="container-x py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
             <a
               href={`tel:${TEL}`}
-              className="flex items-center justify-center gap-3 rounded-lg bg-white/10 text-white font-display font-bold tracking-wide py-3 hover:bg-white/20 active:bg-white/30 transition"
+              className="flex items-center justify-center gap-3 rounded-xl bg-white/10 text-white font-display font-bold tracking-wide py-3.5 hover:bg-white/20 active:bg-white/30 transition"
             >
               <Phone className="h-5 w-5 shrink-0" />
               <span className="text-base">{TEL_DISPLAY}</span>

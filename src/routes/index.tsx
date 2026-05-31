@@ -108,21 +108,34 @@ function Index() {
 
 function Nav() {
   return (
-    <header className="sticky top-0 z-40 bg-primary text-primary-foreground border-b border-white/10 shadow-sm">
-      <div className="container-x flex items-center justify-between py-3">
-        <a href="#top" className="flex items-center gap-3" aria-label="autokosmetik Lilienthal Startseite">
-          <img src={logoDark} alt="autokosmetik Lilienthal" className="h-12 md:h-14 w-auto" />
-        </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white/75">
-          <a href="#leistungen" className="hover:text-white transition">Leistungen</a>
-          <a href="#warum" className="hover:text-white transition">Vorteile</a>
-          <a href="#galerie" className="hover:text-white transition">Galerie</a>
-          <a href="#verkauf" className="hover:text-white transition">Verkauf</a>
-          <a href="#kontakt" className="hover:text-white transition">Kontakt</a>
-        </nav>
-        <a href={`tel:${TEL}`} className="hidden sm:inline-flex items-center gap-2 rounded-md border border-white/25 bg-white/5 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition">
-          <Phone className="h-4 w-4" /> {TEL_DISPLAY}
-        </a>
+    <header className="sticky top-0 z-40">
+      {/* Top info bar */}
+      <div className="bg-primary text-white/85 text-xs">
+        <div className="container-x flex flex-wrap items-center justify-between gap-x-8 gap-y-1.5 py-2 font-medium tracking-wide">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
+            <span className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-accent-foreground" /> FALKENBERGER LANDSTRASSE 77, LILIENTHAL</span>
+            <span className="inline-flex items-center gap-2"><Clock className="h-3.5 w-3.5 text-accent-foreground" /> TERMINE NACH VEREINBARUNG</span>
+          </div>
+          <span className="inline-flex items-center gap-2"><Shield className="h-3.5 w-3.5 text-accent-foreground" /> FACHBETRIEB FÜR FAHRZEUGAUFBEREITUNG</span>
+        </div>
+      </div>
+      {/* Main nav */}
+      <div className="bg-background border-b border-border shadow-sm">
+        <div className="container-x flex items-center justify-between gap-6 py-3">
+          <a href="#top" className="flex items-center shrink-0" aria-label="autokosmetik Lilienthal Startseite">
+            <img src={logoLight} alt="autokosmetik Lilienthal" className="h-16 md:h-20 w-auto" />
+          </a>
+          <nav className="hidden lg:flex items-center gap-9 font-display text-[13px] font-semibold uppercase tracking-[0.18em] text-primary">
+            <a href="#leistungen" className="hover:text-accent-foreground transition-colors">Leistungen</a>
+            <a href="#warum" className="hover:text-accent-foreground transition-colors">Warum wir</a>
+            <a href="#galerie" className="hover:text-accent-foreground transition-colors">Vorher / Nachher</a>
+            <a href="#verkauf" className="hover:text-accent-foreground transition-colors">Verkauf</a>
+            <a href="#kontakt" className="hover:text-accent-foreground transition-colors">Kontakt</a>
+          </nav>
+          <a href={`tel:${TEL}`} className="inline-flex items-center gap-2.5 rounded-md bg-primary text-primary-foreground px-5 py-3 text-sm font-display font-bold tracking-wide hover:bg-[oklch(0.2_0.06_255)] transition shadow-md">
+            <Phone className="h-4 w-4" /> {TEL_DISPLAY}
+          </a>
+        </div>
       </div>
     </header>
   );

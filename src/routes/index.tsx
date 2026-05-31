@@ -118,79 +118,95 @@ function Nav() {
   ];
 
   return (
-    <header className="sticky top-0 z-40">
-      {/* Top info bar */}
-      <div className="bg-primary text-white/85 text-xs">
-        <div className="container-x flex items-center justify-between gap-x-4 py-2 font-medium tracking-wide">
-          <div className="flex items-center gap-x-4 overflow-hidden">
-            <span className="hidden sm:inline-flex items-center gap-2 shrink-0">
-              <MapPin className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
-              <span className="truncate">FALKENBERGER LANDSTR. 77, LILIENTHAL</span>
-            </span>
-            <span className="inline-flex items-center gap-2 shrink-0">
-              <Clock className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
-              TERMINE NACH VEREINBARUNG
+    <>
+      <header className="sticky top-0 z-40">
+        {/* Top info bar */}
+        <div className="bg-primary text-white/85 text-xs">
+          <div className="container-x flex items-center justify-between gap-x-4 py-2 font-medium tracking-wide">
+            <div className="flex items-center gap-x-4 overflow-hidden">
+              <span className="hidden sm:inline-flex items-center gap-2 shrink-0">
+                <MapPin className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
+                <span className="truncate">FALKENBERGER LANDSTR. 77, LILIENTHAL</span>
+              </span>
+              <span className="inline-flex items-center gap-2 shrink-0">
+                <Clock className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
+                TERMINE NACH VEREINBARUNG
+              </span>
+            </div>
+            <span className="hidden md:inline-flex items-center gap-2 shrink-0">
+              <Shield className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
+              FACHBETRIEB FÜR FAHRZEUGAUFBEREITUNG
             </span>
           </div>
-          <span className="hidden md:inline-flex items-center gap-2 shrink-0">
-            <Shield className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
-            FACHBETRIEB FÜR FAHRZEUGAUFBEREITUNG
-          </span>
         </div>
-      </div>
 
-      {/* Main nav */}
-      <div className="bg-background border-b border-border shadow-sm">
-        <div className="container-x flex items-center justify-between gap-4 py-3">
-          <a href="#top" className="flex items-center shrink-0" aria-label="autokosmetik Lilienthal Startseite">
-            <img src={logoLight} alt="autokosmetik Lilienthal" className="h-14 md:h-20 w-auto" />
-          </a>
-
-          {/* Desktop nav — H1-style font, small size */}
-          <nav className="hidden lg:flex items-center gap-8 font-display text-[15px] font-semibold tracking-tight text-primary">
-            {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-accent-foreground transition-colors">
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg bg-secondary text-primary"
-              aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
-            >
-              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-
-            <a href={`tel:${TEL}`} className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-4 py-2.5 text-sm font-display font-bold tracking-wide hover:bg-[oklch(0.2_0.06_255)] transition shadow-md">
-              <Phone className="h-4 w-4 shrink-0" />
-              <span className="hidden sm:inline">{TEL_DISPLAY}</span>
-              <span className="sm:hidden">Anrufen</span>
+        {/* Main nav */}
+        <div className="bg-background border-b border-border shadow-sm">
+          <div className="container-x flex items-center justify-between gap-4 py-3">
+            <a href="#top" className="flex items-center shrink-0" aria-label="autokosmetik Lilienthal Startseite">
+              <img src={logoLight} alt="autokosmetik Lilienthal" className="h-14 md:h-20 w-auto" />
             </a>
-          </div>
-        </div>
 
-        {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="lg:hidden border-t border-border bg-background">
-            <nav className="container-x py-3 flex flex-col gap-1 font-display text-[15px] font-semibold tracking-tight text-primary">
+            {/* Desktop nav — H1-style font, small size */}
+            <nav className="hidden lg:flex items-center gap-8 font-display text-[15px] font-semibold tracking-tight text-primary">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="py-3 px-4 rounded-xl hover:bg-secondary transition-colors"
-                >
+                <a key={link.href} href={link.href} className="hover:text-accent-foreground transition-colors">
                   {link.label}
                 </a>
               ))}
             </nav>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg bg-secondary text-primary"
+                aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
+              >
+                {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+
+              <a href={`tel:${TEL}`} className="hidden sm:inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-4 py-2.5 text-sm font-display font-bold tracking-wide hover:bg-[oklch(0.2_0.06_255)] transition shadow-md">
+                <Phone className="h-4 w-4 shrink-0" />
+                {TEL_DISPLAY}
+              </a>
+            </div>
           </div>
-        )}
+
+          {/* Mobile menu */}
+          {mobileOpen && (
+            <div className="lg:hidden border-t border-border bg-background">
+              <nav className="container-x py-3 flex flex-col gap-1 font-display text-[15px] font-semibold tracking-tight text-primary">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="py-3 px-4 rounded-xl hover:bg-secondary transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          )}
+        </div>
+      </header>
+
+      {/* Sticky mobile call bar — fixed bottom, always visible on scroll */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50">
+        <div className="bg-primary border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.25)]">
+          <div className="container-x py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+            <a
+              href={`tel:${TEL}`}
+              className="flex items-center justify-center gap-3 rounded-xl bg-white/10 text-white font-display font-bold tracking-wide py-3.5 hover:bg-white/20 active:bg-white/30 transition"
+            >
+              <Phone className="h-5 w-5 shrink-0" />
+              <span className="text-base">{TEL_DISPLAY}</span>
+            </a>
+          </div>
+        </div>
       </div>
-    </header>
+    </>
   );
 }
 

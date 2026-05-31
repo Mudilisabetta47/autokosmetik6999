@@ -15,6 +15,7 @@ import galleryTaycan from "@/assets/gallery-porsche-taycan.jpg";
 import galleryLambo from "@/assets/gallery-lambo.jpg";
 import gallery911 from "@/assets/gallery-porsche-911.jpg";
 import galleryMustang from "@/assets/gallery-mustang.webp";
+import logoDark from "@/assets/logo-dark.png";
 import { BeforeAfter } from "@/components/BeforeAfter";
 
 export const Route = createFileRoute("/")({

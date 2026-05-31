@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://autokosmetik6999.lovable.app/sitemap.xml
+Sitemap: https://autokosmetik-lilienthal.de/sitemap.xml

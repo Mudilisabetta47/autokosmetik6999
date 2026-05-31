@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "de_DE" },
       { property: "og:site_name", content: "autokosmetik Lilienthal" },
-      { property: "og:url", content: "https://autokosmetik6999.lovable.app/" },
+      { property: "og:url", content: "https://autokosmetik-lilienthal.de/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Autokosmetik Lilienthal | KFZ-Aufbereitung" },
       { name: "twitter:description", content: "Professionelle Fahrzeugaufbereitung in Lilienthal für Kunden aus Lilienthal, Osterholz-Scharmbeck, Bremen und Umgebung." },
@@ -40,20 +40,20 @@ export const Route = createFileRoute("/")({
       { name: "geo.position", content: "53.1480;8.9000" },
       { name: "ICBM", content: "53.1480, 8.9000" },
     ],
-    links: [{ rel: "canonical", href: "https://autokosmetik6999.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://autokosmetik-lilienthal.de/" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": ["LocalBusiness", "AutoRepair"],
-          "@id": "https://autokosmetik6999.lovable.app/#business",
+          "@id": "https://autokosmetik-lilienthal.de/#business",
           name: "autokosmetik Lilienthal",
           alternateName: "KFZ-Aufbereitung Lilienthal",
           description:
             "Professionelle Autokosmetik und KFZ-Aufbereitung in Lilienthal – Lackaufbereitung, Versiegelung, Polsterreinigung, Innenraumpflege und Verkaufsaufbereitung.",
-          image: "https://autokosmetik6999.lovable.app/og.jpg",
-          url: "https://autokosmetik6999.lovable.app/",
+          image: "https://autokosmetik-lilienthal.de/og.jpg",
+          url: "https://autokosmetik-lilienthal.de/",
           telephone: "+4915234551063",
           email: "info@autokosmetik-lilienthal.de",
           priceRange: "€€",

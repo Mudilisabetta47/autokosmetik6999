@@ -162,6 +162,7 @@ function Index() {
       <Services />
       <Why />
       <Gallery />
+      <Reviews />
       <SalesPrep />
       <Faq />
       <Contact />

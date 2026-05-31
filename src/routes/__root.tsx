@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "carcosmetic test site" },
+      { name: "description", content: "Shine & Drive Lilienthal offers professional car detailing services, including complete vehicle reconditioning and specialized treatments." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "carcosmetic test site" },
+      { property: "og:description", content: "Shine & Drive Lilienthal offers professional car detailing services, including complete vehicle reconditioning and specialized treatments." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "carcosmetic test site" },
+      { name: "twitter:description", content: "Shine & Drive Lilienthal offers professional car detailing services, including complete vehicle reconditioning and specialized treatments." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c2ca9b93-cb74-4edb-87e3-6912477b443e/id-preview-7349fa7c--1a1c72c5-228e-4acc-adf0-b91be21b7455.lovable.app-1780262530349.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c2ca9b93-cb74-4edb-87e3-6912477b443e/id-preview-7349fa7c--1a1c72c5-228e-4acc-adf0-b91be21b7455.lovable.app-1780262530349.png" },
     ],
     links: [
       {

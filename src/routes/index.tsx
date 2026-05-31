@@ -533,6 +533,112 @@ function ContactRow({ icon: Icon, title, children }: { icon: typeof Phone; title
   );
 }
 
+function SeoContent() {
+  return (
+    <section id="region" className="py-20 md:py-28 bg-background">
+      <div className="container-x grid lg:grid-cols-3 gap-10">
+        <article>
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent-foreground/80">Autokosmetik</span>
+          <h2 className="mt-3 text-2xl md:text-3xl font-extrabold text-primary">
+            Autokosmetik – mehr als nur eine Autowäsche
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Autokosmetik bedeutet die professionelle Pflege Ihres Fahrzeugs in höchster
+            Qualität – innen wie außen. Anders als bei einer klassischen Waschanlage
+            arbeiten wir in Handarbeit, schonend für Lack, Polster und Materialien. Das
+            Ergebnis: ein sichtbar gepflegtes Auto, ein hygienischer Innenraum und ein
+            spürbar höherer Werterhalt Ihres Fahrzeugs.
+          </p>
+          <h3 className="mt-6 text-lg font-bold text-primary">Typische Leistungen der Autokosmetik</h3>
+          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 mt-0.5 text-accent-foreground shrink-0" />Hand-Politur und Lackaufbereitung</li>
+            <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 mt-0.5 text-accent-foreground shrink-0" />Carnauba- und Nano-Versiegelung</li>
+            <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 mt-0.5 text-accent-foreground shrink-0" />Innenraum-, Polster- und Lederpflege</li>
+            <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 mt-0.5 text-accent-foreground shrink-0" />Ozonbehandlung gegen Gerüche</li>
+          </ul>
+        </article>
+
+        <article>
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent-foreground/80">KFZ-Aufbereitung</span>
+          <h2 className="mt-3 text-2xl md:text-3xl font-extrabold text-primary">
+            KFZ-Aufbereitung mit System
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Eine professionelle KFZ-Aufbereitung folgt klaren Schritten: Vorwäsche,
+            gründliche Reinigung, Politur, Versiegelung sowie eine intensive
+            Innenraumaufbereitung. So entfernen wir hartnäckige Verschmutzungen, kleine
+            Kratzer und matten Lack – und bringen Ihr Fahrzeug zurück in Bestform. Ideal
+            für Vielfahrer, Leasingrückgaben und vor jedem Verkauf.
+          </p>
+          <h3 className="mt-6 text-lg font-bold text-primary">Wann lohnt sich eine Aufbereitung?</h3>
+          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 mt-0.5 text-accent-foreground shrink-0" />Vor dem Fahrzeugverkauf für mehr Verkaufswert</li>
+            <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 mt-0.5 text-accent-foreground shrink-0" />Vor Leasingrückgabe zur Vermeidung von Abzügen</li>
+            <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 mt-0.5 text-accent-foreground shrink-0" />Nach dem Winter zur Lack- und Unterbodenpflege</li>
+            <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 mt-0.5 text-accent-foreground shrink-0" />Bei Jahreswagen, Gebraucht- und Neuwagen</li>
+          </ul>
+        </article>
+
+        <article>
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent-foreground/80">Region</span>
+          <h2 className="mt-3 text-2xl md:text-3xl font-extrabold text-primary">
+            Ihr Spezialist in Lilienthal & Umgebung
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Unser Standort in der Falkenberger Landstraße in <strong>Lilienthal</strong>
+            liegt direkt im Landkreis Osterholz und ist verkehrsgünstig zwischen
+            <strong> Bremen</strong> und <strong>Osterholz-Scharmbeck</strong> erreichbar.
+            Wir betreuen Privatkunden, Geschäftskunden und Autohändler aus der gesamten
+            Region – mit kurzer Anfahrt, fairen Preisen und einem persönlichen Service.
+          </p>
+          <h3 className="mt-6 text-lg font-bold text-primary">Wir sind für Sie da in:</h3>
+          <ul className="mt-3 grid grid-cols-2 gap-y-2 text-sm text-muted-foreground">
+            {["Lilienthal","Osterholz-Scharmbeck","Bremen","Worpswede","Ritterhude","Grasberg","Schwanewede","Lemwerder"].map(o => (
+              <li key={o} className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-accent-foreground shrink-0" />{o}</li>
+            ))}
+          </ul>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+const faqs = [
+  { q: "Wo finde ich die Autokosmetik in Lilienthal?", a: "Sie finden uns in der Falkenberger Landstraße 77, 28865 Lilienthal – verkehrsgünstig zwischen Lilienthal, Bremen und Osterholz-Scharmbeck." },
+  { q: "Welche Leistungen umfasst eine KFZ-Aufbereitung?", a: "Eine professionelle KFZ-Aufbereitung umfasst Lackaufbereitung, Politur, Versiegelung, Innen- und Polsterreinigung, Lederpflege, Motorwäsche sowie auf Wunsch eine komplette Verkaufsaufbereitung." },
+  { q: "Aus welchen Orten kommen Ihre Kunden?", a: "Wir betreuen Privatkunden und Händler aus Lilienthal, Osterholz-Scharmbeck, Bremen, Worpswede, Ritterhude, Grasberg und dem gesamten Landkreis Osterholz." },
+  { q: "Was kostet eine professionelle Autoaufbereitung?", a: "Unsere Leistungen starten ab 29 € (Motorwäsche). Eine komplette Verkaufsaufbereitung gibt es ab 179 €, Nano-Versiegelung ab 295 €. Für Ihr Fahrzeug erstellen wir gerne ein individuelles Angebot." },
+  { q: "Wie lange dauert eine Aufbereitung?", a: "Je nach Leistung zwischen 1 Stunde (z. B. Innenreinigung) und einem ganzen Tag bei einer Komplettaufbereitung mit Versiegelung. Termine sprechen wir individuell mit Ihnen ab." },
+];
+
+function Faq() {
+  return (
+    <section id="faq" className="py-20 md:py-28 bg-secondary">
+      <div className="container-x grid lg:grid-cols-12 gap-10">
+        <div className="lg:col-span-4">
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent-foreground/80">FAQ</span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-primary">Häufige Fragen zur Autoaufbereitung</h2>
+          <p className="mt-4 text-muted-foreground">
+            Antworten zu Leistungen, Preisen und Ablauf – für Kunden aus Lilienthal,
+            Osterholz-Scharmbeck, Bremen und Umgebung.
+          </p>
+        </div>
+        <div className="lg:col-span-8 space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="group rounded-2xl bg-background border border-border p-5 open:shadow-[var(--shadow-card)] transition">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 text-primary font-semibold list-none">
+                <span>{f.q}</span>
+                <span className="h-7 w-7 rounded-full grid place-items-center bg-secondary text-primary transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-muted-foreground leading-relaxed">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="bg-[oklch(0.16_0.05_258)] text-primary-foreground">

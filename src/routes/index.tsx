@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "de_DE" },
       { property: "og:site_name", content: "autokosmetik Lilienthal" },
-      { property: "og:url", content: "https://autokosmetik6999.lovable.app/" },
+      { property: "og:url", content: "https://autokosmetik-lilienthal.de/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Autokosmetik Lilienthal | KFZ-Aufbereitung" },
       { name: "twitter:description", content: "Professionelle Fahrzeugaufbereitung in Lilienthal für Kunden aus Lilienthal, Osterholz-Scharmbeck, Bremen und Umgebung." },

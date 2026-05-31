@@ -636,7 +636,7 @@ function Faq() {
                 <span>{f.q}</span>
                 <span className="h-7 w-7 rounded-full grid place-items-center bg-secondary text-primary transition group-open:rotate-45">+</span>
               </summary>
-              <p className="mt-3 text-muted-foreground leading-relaxed">{f.a}</p>
+              <div className="mt-3">{f.body ?? <p className="text-muted-foreground leading-relaxed">{f.text}</p>}</div>
             </details>
           ))}
         </div>

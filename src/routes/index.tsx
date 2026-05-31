@@ -430,10 +430,11 @@ function Contact() {
 
           <div className="rounded-3xl overflow-hidden border border-border min-h-[400px] relative" style={{ boxShadow: "var(--shadow-card)" }}>
             <iframe
-              title="Standort autokosmetik Lilienthal"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=8.8800%2C53.1380%2C8.9200%2C53.1580&amp;layer=mapnik&amp;marker=53.1480%2C8.9000"
+              title="Standort autokosmetik – Falkenberger Landstraße 77, 28865 Lilienthal"
+              src="https://www.google.com/maps?q=Falkenberger+Landstra%C3%9Fe+77%2C+28865+Lilienthal&output=embed"
               className="w-full h-full absolute inset-0"
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>
@@ -461,7 +462,7 @@ function Footer() {
     <footer className="bg-[oklch(0.16_0.05_258)] text-primary-foreground">
       <div className="container-x py-16 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
-          <img src={logoDark} alt="autokosmetik Lilienthal" className="h-16 w-auto" />
+          <FooterLogo />
           <p className="mt-5 text-sm leading-relaxed text-white/65 max-w-sm">
             Inhabergeführte KFZ-Aufbereitung in Lilienthal. Mit Sorgfalt, hochwertigen
             Produkten und ehrlicher Beratung – für Privatkunden und Fahrzeughändler.
@@ -494,6 +495,18 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterLogo() {
+  return (
+    <div className="flex flex-col leading-none select-none" aria-label="autokosmetik Lilienthal">
+      <svg viewBox="0 0 520 110" className="h-14 md:h-16 w-auto" role="img" aria-hidden="true">
+        <text x="0" y="78" fontFamily="'Sora', system-ui, sans-serif" fontWeight="800" fontSize="92" fill="#ffffff" letterSpacing="-2">auto</text>
+        <text x="195" y="78" fontFamily="'Sora', system-ui, sans-serif" fontStyle="italic" fontWeight="700" fontSize="92" fill="#ffffff" letterSpacing="-2">kosmetik</text>
+      </svg>
+      <span className="mt-2 text-[11px] tracking-[0.32em] uppercase text-white/70 font-medium">Lackpflege · Innenreinigung · Versiegelung</span>
+    </div>
   );
 }
 
@@ -546,12 +559,12 @@ function Gallery() {
             </a>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
             {galleryShots.map((g) => (
-              <figure key={g.label} className="group relative aspect-square overflow-hidden rounded-2xl bg-card" style={{ boxShadow: "var(--shadow-card)" }}>
+              <figure key={g.label} className="group relative aspect-[4/3] sm:aspect-square lg:aspect-[3/4] overflow-hidden rounded-2xl bg-card" style={{ boxShadow: "var(--shadow-card)" }}>
                 <img src={g.src} alt={g.label} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
-                <figcaption className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white opacity-0 group-hover:opacity-100 transition">{g.label}</figcaption>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <figcaption className="absolute bottom-4 left-4 right-4 text-sm md:text-base font-semibold text-white drop-shadow">{g.label}</figcaption>
               </figure>
             ))}
           </div>

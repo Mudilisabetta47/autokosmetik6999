@@ -23,32 +23,106 @@ import { BeforeAfter } from "@/components/BeforeAfter";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "autokosmetik Lilienthal – Professionelle KFZ-Aufbereitung" },
-      { name: "description", content: "Professionelle Autokosmetik in Lilienthal: Lackaufbereitung, Versiegelung, Innenreinigung & Komplettpflege. Faire Preise ab 29 €. Jetzt Termin vereinbaren!" },
-      { property: "og:title", content: "autokosmetik Lilienthal – Professionelle KFZ-Aufbereitung" },
-      { property: "og:description", content: "Lackaufbereitung, Versiegelung, Innenreinigung & komplette Fahrzeugpflege in Lilienthal." },
+      { title: "Autokosmetik Lilienthal | KFZ-Aufbereitung Osterholz-Scharmbeck & Bremen" },
+      { name: "description", content: "Professionelle Autokosmetik & KFZ-Aufbereitung in Lilienthal – Lackaufbereitung, Versiegelung, Innenreinigung und Komplettpflege. Für Kunden aus Lilienthal, Osterholz-Scharmbeck, Bremen und Umgebung. Preise ab 29 €. Jetzt Termin sichern." },
+      { name: "keywords", content: "Autokosmetik Lilienthal, KFZ-Aufbereitung Lilienthal, Fahrzeugaufbereitung Osterholz-Scharmbeck, Autoaufbereitung Bremen, Lackaufbereitung, Nano Versiegelung, Innenreinigung Auto, Polsterreinigung, Verkaufsaufbereitung, Cabrio Verdeck Pflege" },
+      { property: "og:title", content: "Autokosmetik Lilienthal | KFZ-Aufbereitung Osterholz-Scharmbeck & Bremen" },
+      { property: "og:description", content: "Professionelle Fahrzeugaufbereitung in Lilienthal – Lack, Innenraum, Versiegelung. Wir pflegen Fahrzeuge aus Lilienthal, Osterholz-Scharmbeck, Bremen und Umgebung." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:locale", content: "de_DE" },
+      { property: "og:site_name", content: "autokosmetik Lilienthal" },
+      { property: "og:url", content: "https://autokosmetik6999.lovable.app/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Autokosmetik Lilienthal | KFZ-Aufbereitung" },
+      { name: "twitter:description", content: "Professionelle Fahrzeugaufbereitung in Lilienthal für Kunden aus Lilienthal, Osterholz-Scharmbeck, Bremen und Umgebung." },
+      { name: "geo.region", content: "DE-NI" },
+      { name: "geo.placename", content: "Lilienthal" },
+      { name: "geo.position", content: "53.1480;8.9000" },
+      { name: "ICBM", content: "53.1480, 8.9000" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
-    scripts: [{
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "AutoRepair",
-        name: "autokosmetik",
-        description: "Professionelle KFZ-Aufbereitung in Lilienthal",
-        telephone: "+4915234551063",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Falkenberger Landstraße 77",
-          postalCode: "28865",
-          addressLocality: "Lilienthal",
-          addressCountry: "DE",
-        },
-        openingHours: "Mo-Fr 08:00-17:00",
-      }),
-    }],
+    links: [{ rel: "canonical", href: "https://autokosmetik6999.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AutoDetailing",
+          "@id": "https://autokosmetik6999.lovable.app/#business",
+          name: "autokosmetik Lilienthal",
+          description:
+            "Professionelle Autokosmetik und KFZ-Aufbereitung in Lilienthal – Lackaufbereitung, Versiegelung, Polsterreinigung, Innenraumpflege und Verkaufsaufbereitung.",
+          image: "https://autokosmetik6999.lovable.app/og.jpg",
+          url: "https://autokosmetik6999.lovable.app/",
+          telephone: "+4915234551063",
+          priceRange: "€€",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Falkenberger Landstraße 77",
+            postalCode: "28865",
+            addressLocality: "Lilienthal",
+            addressRegion: "Niedersachsen",
+            addressCountry: "DE",
+          },
+          geo: { "@type": "GeoCoordinates", latitude: 53.148, longitude: 8.9 },
+          areaServed: [
+            { "@type": "City", name: "Lilienthal" },
+            { "@type": "City", name: "Osterholz-Scharmbeck" },
+            { "@type": "City", name: "Bremen" },
+            { "@type": "AdministrativeArea", name: "Landkreis Osterholz" },
+          ],
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "08:00",
+              closes: "17:00",
+            },
+          ],
+          sameAs: [],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Wo befindet sich die Autokosmetik in Lilienthal?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Unser Standort ist in der Falkenberger Landstraße 77, 28865 Lilienthal – verkehrsgünstig zwischen Lilienthal, Bremen und Osterholz-Scharmbeck.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Welche Leistungen umfasst eine KFZ-Aufbereitung?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Eine professionelle KFZ-Aufbereitung umfasst Lackaufbereitung, Politur, Versiegelung, Innenreinigung, Polsterreinigung, Lederpflege, Motorwäsche und auf Wunsch eine komplette Verkaufsaufbereitung.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Aus welchen Orten kommen Ihre Kunden?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Wir betreuen Privatkunden und Händler aus Lilienthal, Osterholz-Scharmbeck, Bremen, Worpswede, Ritterhude, Grasberg und dem gesamten Landkreis Osterholz.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Was kostet eine Autoaufbereitung?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Unsere Leistungen starten bereits ab 29 € (Motorwäsche). Eine komplette Verkaufsaufbereitung gibt es ab 179 €, Nano-Versiegelung ab 295 €. Gerne erstellen wir Ihnen ein individuelles Angebot.",
+              },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: Index,
 });

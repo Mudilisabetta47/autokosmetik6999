@@ -547,12 +547,12 @@ function Gallery() {
             </a>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
             {galleryShots.map((g) => (
-              <figure key={g.label} className="group relative aspect-square overflow-hidden rounded-2xl bg-card" style={{ boxShadow: "var(--shadow-card)" }}>
+              <figure key={g.label} className="group relative aspect-[4/3] sm:aspect-square lg:aspect-[3/4] overflow-hidden rounded-2xl bg-card" style={{ boxShadow: "var(--shadow-card)" }}>
                 <img src={g.src} alt={g.label} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
-                <figcaption className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white opacity-0 group-hover:opacity-100 transition">{g.label}</figcaption>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <figcaption className="absolute bottom-4 left-4 right-4 text-sm md:text-base font-semibold text-white drop-shadow">{g.label}</figcaption>
               </figure>
             ))}
           </div>

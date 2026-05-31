@@ -15,6 +15,7 @@ import galleryTaycan from "@/assets/gallery-porsche-taycan.jpg";
 import galleryLambo from "@/assets/gallery-lambo.jpg";
 import gallery911 from "@/assets/gallery-porsche-911.jpg";
 import galleryMustang from "@/assets/gallery-mustang.webp";
+import logoDark from "@/assets/logo-dark.png";
 import { BeforeAfter } from "@/components/BeforeAfter";
 
 export const Route = createFileRoute("/")({
@@ -106,22 +107,19 @@ function Index() {
 
 function Nav() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border">
-      <div className="container-x flex items-center justify-between py-4">
-        <a href="#top" className="flex items-center gap-2">
-          <div className="h-9 w-9 rounded-xl grid place-items-center" style={{ background: "var(--gradient-accent)" }}>
-            <Sparkles className="h-5 w-5 text-primary" />
-          </div>
-          <span className="font-display font-bold text-lg tracking-tight text-primary">autokosmetik</span>
+    <header className="sticky top-0 z-40 bg-primary text-primary-foreground border-b border-white/10 shadow-sm">
+      <div className="container-x flex items-center justify-between py-3">
+        <a href="#top" className="flex items-center gap-3" aria-label="autokosmetik Lilienthal Startseite">
+          <img src={logoDark} alt="autokosmetik Lilienthal" className="h-12 md:h-14 w-auto" />
         </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-          <a href="#leistungen" className="hover:text-primary transition">Leistungen</a>
-          <a href="#warum" className="hover:text-primary transition">Vorteile</a>
-          <a href="#galerie" className="hover:text-primary transition">Galerie</a>
-          <a href="#verkauf" className="hover:text-primary transition">Verkauf</a>
-          <a href="#kontakt" className="hover:text-primary transition">Kontakt</a>
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white/75">
+          <a href="#leistungen" className="hover:text-white transition">Leistungen</a>
+          <a href="#warum" className="hover:text-white transition">Vorteile</a>
+          <a href="#galerie" className="hover:text-white transition">Galerie</a>
+          <a href="#verkauf" className="hover:text-white transition">Verkauf</a>
+          <a href="#kontakt" className="hover:text-white transition">Kontakt</a>
         </nav>
-        <a href={`tel:${TEL}`} className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:opacity-90 transition">
+        <a href={`tel:${TEL}`} className="hidden sm:inline-flex items-center gap-2 rounded-md border border-white/25 bg-white/5 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition">
           <Phone className="h-4 w-4" /> {TEL_DISPLAY}
         </a>
       </div>
@@ -377,42 +375,40 @@ function ContactRow({ icon: Icon, title, children }: { icon: typeof Phone; title
 
 function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground py-14">
-      <div className="container-x grid md:grid-cols-3 gap-10">
-        <div>
-          <div className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-xl grid place-items-center" style={{ background: "var(--gradient-accent)" }}>
-              <Sparkles className="h-5 w-5 text-primary" />
-            </div>
-            <span className="font-display font-bold text-lg">autokosmetik</span>
-          </div>
-          <p className="mt-4 text-sm text-primary-foreground/70 max-w-xs">
-            Professionelle KFZ-Aufbereitung in Lilienthal – Lackaufbereitung, Versiegelung & Innenpflege.
+    <footer className="bg-[oklch(0.16_0.05_258)] text-primary-foreground">
+      <div className="container-x py-16 grid md:grid-cols-12 gap-10">
+        <div className="md:col-span-5">
+          <img src={logoDark} alt="autokosmetik Lilienthal" className="h-16 w-auto" />
+          <p className="mt-5 text-sm leading-relaxed text-white/65 max-w-sm">
+            Inhabergeführte KFZ-Aufbereitung in Lilienthal. Mit Sorgfalt, hochwertigen
+            Produkten und ehrlicher Beratung – für Privatkunden und Fahrzeughändler.
           </p>
         </div>
-        <div>
-          <h4 className="font-display font-bold mb-3">Kontakt</h4>
-          <ul className="space-y-2 text-sm text-primary-foreground/80">
-            <li>Falkenberger Landstraße 77</li>
-            <li>28865 Lilienthal</li>
-            <li><a href={`tel:${TEL}`} className="hover:text-accent transition">{TEL_DISPLAY}</a></li>
+        <div className="md:col-span-3">
+          <h4 className="font-display font-semibold text-sm uppercase tracking-wider text-white/90 mb-4">Kontakt</h4>
+          <ul className="space-y-2.5 text-sm text-white/70">
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground" /><span>Falkenberger Landstraße 77<br />28865 Lilienthal</span></li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0 text-accent-foreground" /><a href={`tel:${TEL}`} className="hover:text-white transition">{TEL_DISPLAY}</a></li>
           </ul>
         </div>
-        <div>
-          <h4 className="font-display font-bold mb-3">Öffnungszeiten</h4>
-          <ul className="space-y-2 text-sm text-primary-foreground/80">
-            <li>Mo – Fr: 8:00 – 17:00 Uhr</li>
-            <li>Samstag: nach Absprache</li>
+        <div className="md:col-span-4">
+          <h4 className="font-display font-semibold text-sm uppercase tracking-wider text-white/90 mb-4">Öffnungszeiten</h4>
+          <ul className="space-y-2.5 text-sm text-white/70">
+            <li className="flex justify-between border-b border-white/10 pb-2"><span>Montag – Freitag</span><span className="text-white font-medium">8:00 – 17:00</span></li>
+            <li className="flex justify-between border-b border-white/10 pb-2"><span>Samstag</span><span className="text-white font-medium">nach Absprache</span></li>
+            <li className="flex justify-between"><span>Sonntag</span><span className="text-white/50">geschlossen</span></li>
           </ul>
-          <div className="mt-4 flex gap-4 text-xs text-primary-foreground/60">
-            <a href="#" className="hover:text-accent transition">Impressum</a>
-            <a href="#" className="hover:text-accent transition">Datenschutz</a>
-          </div>
         </div>
       </div>
-      <div className="container-x mt-10 pt-6 border-t border-white/10 text-xs text-primary-foreground/50 flex flex-wrap justify-between gap-2">
-        <span>© {new Date().getFullYear()} autokosmetik Lilienthal</span>
-        <span>Mit Sorgfalt aufbereitet.</span>
+      <div className="border-t border-white/10">
+        <div className="container-x py-5 flex flex-wrap items-center justify-between gap-3 text-xs text-white/50">
+          <span>© {new Date().getFullYear()} autokosmetik Lilienthal · Alle Rechte vorbehalten</span>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition">Impressum</a>
+            <a href="#" className="hover:text-white transition">Datenschutz</a>
+            <a href="#" className="hover:text-white transition">AGB</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

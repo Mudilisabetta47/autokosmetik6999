@@ -16,6 +16,7 @@ import galleryLambo from "@/assets/gallery-lambo.jpg";
 import gallery911 from "@/assets/gallery-porsche-911.jpg";
 import galleryMustang from "@/assets/gallery-mustang.webp";
 import logoDark from "@/assets/logo-dark.png";
+import logoLight from "@/assets/logo-light.png";
 import { BeforeAfter } from "@/components/BeforeAfter";
 
 export const Route = createFileRoute("/")({

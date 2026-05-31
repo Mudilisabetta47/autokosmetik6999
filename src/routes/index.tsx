@@ -498,6 +498,18 @@ function Footer() {
   );
 }
 
+function FooterLogo() {
+  return (
+    <div className="flex flex-col leading-none select-none" aria-label="autokosmetik Lilienthal">
+      <svg viewBox="0 0 520 110" className="h-14 md:h-16 w-auto" role="img" aria-hidden="true">
+        <text x="0" y="78" fontFamily="'Sora', system-ui, sans-serif" fontWeight="800" fontSize="92" fill="#ffffff" letterSpacing="-2">auto</text>
+        <text x="195" y="78" fontFamily="'Sora', system-ui, sans-serif" fontStyle="italic" fontWeight="700" fontSize="92" fill="#ffffff" letterSpacing="-2">kosmetik</text>
+      </svg>
+      <span className="mt-2 text-[11px] tracking-[0.32em] uppercase text-white/70 font-medium">Lackpflege · Innenreinigung · Versiegelung</span>
+    </div>
+  );
+}
+
 const pairs = [
   { id: "lack", title: "Lackaufbereitung", desc: "Politur, Reinigung und Pflege für tiefen Glanz statt matter, verschmutzter Oberflächen.", before: beforePaint, after: afterPaint },
   { id: "innen", title: "Innenraum", desc: "Aussaugen, Polsterreinigung und Aufbereitung – aus verschmutzt wird gepflegt und hygienisch.", before: beforeInterior, after: interior },

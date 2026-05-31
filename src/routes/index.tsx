@@ -188,8 +188,7 @@ function Nav() {
     { href: "#leistungen", label: "Leistungen" },
     { href: "#warum", label: "Warum wir" },
     { href: "#galerie", label: "Vorher / Nachher" },
-    { href: "#region", label: "Region" },
-    { href: "#faq", label: "FAQ" },
+    { href: "#faq", label: "Wissen & FAQ" },
     { href: "#kontakt", label: "Kontakt" },
   ];
 

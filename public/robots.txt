@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://autokosmetik6999.lovable.app/sitemap.xml

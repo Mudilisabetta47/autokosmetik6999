@@ -7,6 +7,15 @@ import heroCar from "@/assets/hero-car.jpg";
 import detailing from "@/assets/detailing.jpg";
 import interior from "@/assets/interior.jpg";
 import wax from "@/assets/wax.jpg";
+import beforePaint from "@/assets/before-paint.jpg";
+import afterPaint from "@/assets/after-paint.jpg";
+import beforeInterior from "@/assets/before-interior.jpg";
+import beforeSeal from "@/assets/before-seal.jpg";
+import galleryTaycan from "@/assets/gallery-porsche-taycan.jpg";
+import galleryLambo from "@/assets/gallery-lambo.jpg";
+import gallery911 from "@/assets/gallery-porsche-911.jpg";
+import galleryMustang from "@/assets/gallery-mustang.webp";
+import { BeforeAfter } from "@/components/BeforeAfter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -87,6 +96,7 @@ function Index() {
       <TrustBar />
       <Services />
       <Why />
+      <Gallery />
       <SalesPrep />
       <Contact />
       <Footer />
@@ -107,6 +117,7 @@ function Nav() {
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
           <a href="#leistungen" className="hover:text-primary transition">Leistungen</a>
           <a href="#warum" className="hover:text-primary transition">Vorteile</a>
+          <a href="#galerie" className="hover:text-primary transition">Galerie</a>
           <a href="#verkauf" className="hover:text-primary transition">Verkauf</a>
           <a href="#kontakt" className="hover:text-primary transition">Kontakt</a>
         </nav>

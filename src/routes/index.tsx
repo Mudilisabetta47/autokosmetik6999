@@ -86,40 +86,11 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "Wo befindet sich die Autokosmetik in Lilienthal?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Unser Standort ist in der Falkenberger Landstraße 77, 28865 Lilienthal – verkehrsgünstig zwischen Lilienthal, Bremen und Osterholz-Scharmbeck.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Welche Leistungen umfasst eine KFZ-Aufbereitung?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Eine professionelle KFZ-Aufbereitung umfasst Lackaufbereitung, Politur, Versiegelung, Innenreinigung, Polsterreinigung, Lederpflege, Motorwäsche und auf Wunsch eine komplette Verkaufsaufbereitung.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Aus welchen Orten kommen Ihre Kunden?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Wir betreuen Privatkunden und Händler aus Lilienthal, Osterholz-Scharmbeck, Bremen, Worpswede, Ritterhude, Grasberg und dem gesamten Landkreis Osterholz.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Was kostet eine Autoaufbereitung?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Unsere Leistungen starten bereits ab 29 € (Motorwäsche). Eine komplette Verkaufsaufbereitung gibt es ab 179 €, Nano-Versiegelung ab 295 €. Gerne erstellen wir Ihnen ein individuelles Angebot.",
-              },
-            },
-          ],
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.text },
+          })),
         }),
       },
     ],

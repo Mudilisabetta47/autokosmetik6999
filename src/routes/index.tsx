@@ -430,10 +430,11 @@ function Contact() {
 
           <div className="rounded-3xl overflow-hidden border border-border min-h-[400px] relative" style={{ boxShadow: "var(--shadow-card)" }}>
             <iframe
-              title="Standort autokosmetik Lilienthal"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=8.8800%2C53.1380%2C8.9200%2C53.1580&amp;layer=mapnik&amp;marker=53.1480%2C8.9000"
+              title="Standort autokosmetik – Falkenberger Landstraße 77, 28865 Lilienthal"
+              src="https://www.google.com/maps?q=Falkenberger+Landstra%C3%9Fe+77%2C+28865+Lilienthal&output=embed"
               className="w-full h-full absolute inset-0"
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>

@@ -107,22 +107,19 @@ function Index() {
 
 function Nav() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border">
-      <div className="container-x flex items-center justify-between py-4">
-        <a href="#top" className="flex items-center gap-2">
-          <div className="h-9 w-9 rounded-xl grid place-items-center" style={{ background: "var(--gradient-accent)" }}>
-            <Sparkles className="h-5 w-5 text-primary" />
-          </div>
-          <span className="font-display font-bold text-lg tracking-tight text-primary">autokosmetik</span>
+    <header className="sticky top-0 z-40 bg-primary text-primary-foreground border-b border-white/10 shadow-sm">
+      <div className="container-x flex items-center justify-between py-3">
+        <a href="#top" className="flex items-center gap-3" aria-label="autokosmetik Lilienthal Startseite">
+          <img src={logoDark} alt="autokosmetik Lilienthal" className="h-12 md:h-14 w-auto" />
         </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-          <a href="#leistungen" className="hover:text-primary transition">Leistungen</a>
-          <a href="#warum" className="hover:text-primary transition">Vorteile</a>
-          <a href="#galerie" className="hover:text-primary transition">Galerie</a>
-          <a href="#verkauf" className="hover:text-primary transition">Verkauf</a>
-          <a href="#kontakt" className="hover:text-primary transition">Kontakt</a>
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white/75">
+          <a href="#leistungen" className="hover:text-white transition">Leistungen</a>
+          <a href="#warum" className="hover:text-white transition">Vorteile</a>
+          <a href="#galerie" className="hover:text-white transition">Galerie</a>
+          <a href="#verkauf" className="hover:text-white transition">Verkauf</a>
+          <a href="#kontakt" className="hover:text-white transition">Kontakt</a>
         </nav>
-        <a href={`tel:${TEL}`} className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:opacity-90 transition">
+        <a href={`tel:${TEL}`} className="hidden sm:inline-flex items-center gap-2 rounded-md border border-white/25 bg-white/5 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition">
           <Phone className="h-4 w-4" /> {TEL_DISPLAY}
         </a>
       </div>

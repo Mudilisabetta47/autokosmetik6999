@@ -606,6 +606,52 @@ const faqs: FaqItem[] = [
 ];
 
 
+function Reviews() {
+  return (
+    <section id="bewertungen" className="py-20 md:py-28 bg-background">
+      <div className="container-x">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent-foreground/80">Google Bewertungen</span>
+          <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-primary">Das sagen unsere Kunden</h2>
+          <p className="mt-4 text-muted-foreground text-lg">
+            Überzeugen Sie sich selbst – unsere Kunden aus Lilienthal, Bremen und Osterholz-Scharmbeck bewerten uns auf Google.
+          </p>
+
+          <div className="mt-10 inline-flex flex-col items-center gap-4 rounded-3xl bg-card border border-border p-8 md:p-10" style={{ boxShadow: "var(--shadow-card)" }}>
+            <div className="flex items-center gap-1.5">
+              {[0, 1, 2, 3].map((i) => (
+                <Star key={i} className="h-9 w-9 fill-[oklch(0.75_0.14_75)] text-[oklch(0.75_0.14_75)]" />
+              ))}
+              <svg viewBox="0 0 24 24" className="h-9 w-9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="halfStar" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="80%" stopColor="oklch(0.75 0.14 75)" />
+                    <stop offset="80%" stopColor="oklch(0.85 0.01 75)" />
+                  </linearGradient>
+                </defs>
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#halfStar)" stroke="oklch(0.75 0.14 75)" strokeWidth="1" />
+              </svg>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="text-6xl font-display font-extrabold text-primary">4,8</span>
+              <span className="text-lg text-muted-foreground">/ 5</span>
+            </div>
+            <p className="text-sm text-muted-foreground">Bewertungen auf Google</p>
+            <a
+              href="https://share.google/4qr3EB8RbXQSR0R7n"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:opacity-90 transition"
+            >
+              <Star className="h-4 w-4" /> Alle Bewertungen lesen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Faq() {
   return (
     <section id="faq" className="py-20 md:py-28 bg-secondary">

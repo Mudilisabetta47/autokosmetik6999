@@ -77,6 +77,18 @@ function ImpressumPage() {
 
           <section>
             <h2 className="text-lg font-display font-semibold text-primary">
+              Kontakt für rechtliche Fragen
+            </h2>
+            <p className="flex items-center gap-2 mt-3">
+              <Mail className="h-4 w-4 shrink-0 text-accent-foreground" />
+              <a href="mailto:mudi@mep-agentur.de" className="hover:text-accent-foreground transition">
+                mudi@mep-agentur.de
+              </a>
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-display font-semibold text-primary">
               Haftungsausschluss
             </h2>
             <div className="mt-3 space-y-3 text-muted-foreground leading-relaxed text-sm">

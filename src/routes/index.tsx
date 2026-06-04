@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Phone, MapPin, Clock, Sparkles, Shield, Droplets, Car, Wrench,
@@ -713,7 +713,7 @@ function Footer() {
           <span>© {new Date().getFullYear()} autokosmetik Lilienthal · Alle Rechte vorbehalten</span>
           <div className="flex gap-6">
             <a href="/impressum" className="hover:text-white transition">Impressum</a>
-            <a href="#" className="hover:text-white transition">Datenschutz</a>
+            <Link to="/datenschutz" className="hover:text-white transition">Datenschutz</Link>
             <a href="#" className="hover:text-white transition">AGB</a>
           </div>
         </div>

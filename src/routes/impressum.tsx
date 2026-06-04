@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, MapPin, ArrowLeft } from "lucide-react";
+import { Phone, MapPin, Mail, ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/impressum")({
   head: () => ({

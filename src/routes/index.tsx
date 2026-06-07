@@ -518,7 +518,7 @@ function Contact() {
           <div className="rounded-3xl overflow-hidden border border-border min-h-[400px] relative" style={{ boxShadow: "var(--shadow-card)" }}>
             <iframe
               title="Standort autokosmetik – Falkenberger Landstraße 75, 28865 Lilienthal"
-              src="https://www.google.com/maps?q=Falkenberger+Landstra%C3%9Fe+77%2C+28865+Lilienthal&output=embed"
+              src="https://www.google.com/maps?q=Falkenberger+Landstra%C3%9Fe+75%2C+28865+Lilienthal&output=embed"
               className="w-full h-full absolute inset-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -821,7 +821,7 @@ function Gallery() {
 }
 
 const shopSlides = [
-  { src: shopFront.url, alt: "autokosmetik Lilienthal – Standort Falkenberger Landstr. 77 mit aufbereiteten Porsche 911 Fahrzeugen" },
+  { src: shopFront.url, alt: "autokosmetik Lilienthal – Standort Falkenberger Landstr. 75 mit aufbereiteten Porsche 911 Fahrzeugen" },
 ];
 
 function ShopSlider() {
@@ -851,7 +851,7 @@ function ShopSlider() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6 text-white">
                     <p className="text-xs md:text-sm font-semibold uppercase tracking-wider opacity-90">autokosmetik Lilienthal</p>
-                    <p className="mt-1 text-lg md:text-2xl font-bold drop-shadow">Falkenberger Landstr. 77 · 28865 Lilienthal</p>
+                    <p className="mt-1 text-lg md:text-2xl font-bold drop-shadow">Falkenberger Landstr. 75 · 28865 Lilienthal</p>
                   </div>
                 </div>
               </CarouselItem>

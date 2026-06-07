@@ -4,7 +4,8 @@ import {
   Phone, MapPin, Clock, Sparkles, Shield, Droplets, Car, Wrench,
   Sofa, Wind, Gem, CheckCircle2, ArrowRight, Star, Menu, X, Scissors, Caravan,
 } from "lucide-react";
-import heroCar from "@/assets/hero-car.jpg";
+import heroCarAsset from "@/assets/shop-front-porsches.png.asset.json";
+const heroCar = heroCarAsset.url;
 import detailing from "@/assets/detailing.jpg";
 import interior from "@/assets/interior.jpg";
 import wax from "@/assets/wax.jpg";
@@ -289,9 +290,10 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      <div className="absolute inset-0 opacity-40">
-        <img src={heroCar} alt="" width={1920} height={1080} className="w-full h-full object-cover mix-blend-luminosity" />
+      <div className="absolute inset-0">
+        <img src={heroCar} alt="autokosmetik Lilienthal — Studio in der Falkenberger Landstraße 77" width={1920} height={1080} className="w-full h-full object-cover" />
       </div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.16_0.06_258)]/90 via-[oklch(0.16_0.06_258)]/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.18_0.06_258)] via-transparent to-transparent" />
       <div className="container-x relative py-24 md:py-36">
         <div className="max-w-3xl">

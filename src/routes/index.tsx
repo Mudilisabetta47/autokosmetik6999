@@ -727,9 +727,9 @@ function Footer() {
         <div className="container-x py-5 flex flex-wrap items-center justify-between gap-3 text-xs text-white/50">
           <span>© {new Date().getFullYear()} autokosmetik Lilienthal · Alle Rechte vorbehalten</span>
           <div className="flex gap-6">
+            <Link to="/galerie" className="hover:text-white transition">Galerie</Link>
             <a href="/impressum" className="hover:text-white transition">Impressum</a>
             <Link to="/datenschutz" className="hover:text-white transition">Datenschutz</Link>
-            <a href="#" className="hover:text-white transition">AGB</a>
           </div>
         </div>
       </div>

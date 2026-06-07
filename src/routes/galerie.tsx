@@ -18,6 +18,17 @@ import detailing from "@/assets/detailing.jpg";
 import heroCar from "@/assets/hero-car.jpg";
 import logoLight from "@/assets/logo-light.png";
 
+import porscheBoxster from "@/assets/porsche-boxster-schwarz.jpg.asset.json";
+import g63Front from "@/assets/g63-amg-weiss-front.jpg.asset.json";
+import porsche997 from "@/assets/porsche-997-turbo-front.jpg.asset.json";
+import porsche924 from "@/assets/porsche-924-rot.jpg.asset.json";
+import porsche911CarreraS from "@/assets/porsche-911-carrera-s-schwarz.jpg.asset.json";
+import bmwM850Heck from "@/assets/bmw-m850i-cabrio-heck.jpg.asset.json";
+import bmwM850Front from "@/assets/bmw-m850i-cabrio-front.jpg.asset.json";
+import porsche991Seite from "@/assets/porsche-991-schwarz-seite.jpg.asset.json";
+import bmwM850Seite from "@/assets/bmw-m850i-cabrio-seite.jpg.asset.json";
+import g63Heck from "@/assets/g63-amg-weiss-heck.jpg.asset.json";
+
 export const Route = createFileRoute("/galerie")({
   head: () => ({
     meta: [

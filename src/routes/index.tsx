@@ -357,8 +357,17 @@ function Services() {
                   <s.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-right">
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">ab</div>
-                  <div className="text-2xl font-display font-bold text-primary">{s.price},00 €</div>
+                  {s.price !== null ? (
+                    <>
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground">ab</div>
+                      <div className="text-2xl font-display font-bold text-primary">{s.price},00 €</div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground">Preis</div>
+                      <div className="text-2xl font-display font-bold text-primary">Individuell</div>
+                    </>
+                  )}
                 </div>
               </div>
               <h3 className="mt-5 text-xl font-bold text-primary">{s.title}</h3>

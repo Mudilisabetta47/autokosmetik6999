@@ -203,7 +203,7 @@ function Nav() {
             <div className="flex items-center gap-x-4 overflow-hidden">
               <span className="hidden sm:inline-flex items-center gap-2 shrink-0">
                 <MapPin className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
-                <span className="truncate">FALKENBERGER LANDSTR. 77, LILIENTHAL</span>
+                <span className="truncate">FALKENBERGER LANDSTR. 75, LILIENTHAL</span>
               </span>
               <span className="inline-flex items-center gap-2 shrink-0">
                 <Clock className="h-3.5 w-3.5 text-accent-foreground shrink-0" />

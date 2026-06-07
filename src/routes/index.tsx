@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Phone, MapPin, Clock, Sparkles, Shield, Droplets, Car, Wrench,
-  Sofa, Wind, Gem, CheckCircle2, ArrowRight, Star, Menu, X,
+  Sofa, Wind, Gem, CheckCircle2, ArrowRight, Star, Menu, X, Scissors, Caravan,
 } from "lucide-react";
 import heroCar from "@/assets/hero-car.jpg";
 import detailing from "@/assets/detailing.jpg";
@@ -118,17 +118,22 @@ export const Route = createFileRoute("/")({
 const TEL = "+4915234551063";
 const TEL_DISPLAY = "0152 / 345 510 63";
 
-const services = [
-  { icon: Sparkles, title: "Komplettaufbereitung", price: 225, desc: "Rundum-Service nach Absprache: Kratzer entfernen, Lackpflege und gründliche Innenaufbereitung." },
-  { icon: Droplets, title: "Lackaufbereitung", price: 225, desc: "Handoberwäsche, Säuberung der Radkästen & Felgen, Lackreinigung und Pflege der Kunststoffteile." },
-  { icon: Shield, title: "Carnauba-Wachs", price: 119, desc: "Hartwachsversiegelung für besonders langen Schutz und intensiven Lackglanz." },
-  { icon: Car, title: "Innenreinigung", price: 49, desc: "Aussaugen von Innenraum und Kofferraum, Scheibenreinigung und Armaturensäuberung." },
-  { icon: Wind, title: "Cabrio-Verdeck", price: 99, desc: "Schonende Säuberung und Imprägnierung Ihres Cabrio-Verdecks." },
-  { icon: Star, title: "Verkaufsaufbereitung", price: 179, desc: "Rundumreinigung für den Fahrzeugverkauf – für den besten ersten Eindruck." },
-  { icon: Sofa, title: "Innenaufbereitung", price: 49, desc: "Intensive Innenraumpflege nach Absprache, individuell auf Ihr Fahrzeug abgestimmt." },
-  { icon: Gem, title: "Nano-Versiegelung", price: 295, desc: "Premium-Schutz für den Lack inkl. Felgenreparatur und Ozonbehandlung möglich." },
-  { icon: Sofa, title: "Polster & Leder", price: 49, desc: "Polsterreinigung und Lederpflege inklusive Imprägnierung." },
-  { icon: Wrench, title: "Motorwäsche", price: 29, desc: "Gründliche Motorwäsche mit anschließender Versiegelung." },
+type Service = {
+  icon: typeof Sparkles;
+  title: string;
+  price: number | null;
+  desc: string;
+};
+
+const services: Service[] = [
+  { icon: Star, title: "Verkaufsaufbereitung", price: 260, desc: "Rundumreinigung für den Fahrzeugverkauf – für den besten ersten Eindruck." },
+  { icon: Sofa, title: "Innenaufbereitung", price: 60, desc: "Intensive Innenraumpflege nach Absprache, individuell auf Ihr Fahrzeug abgestimmt." },
+  { icon: Sofa, title: "Polster & Leder", price: 70, desc: "Polsterreinigung und Lederpflege inklusive Imprägnierung." },
+  { icon: Shield, title: "Hochglanzversiegelung", price: 250, desc: "Intensiver Tiefenglanz und langanhaltender Schutz für Ihren Lack." },
+  { icon: Gem, title: "Nano-Versiegelung", price: 350, desc: "Premium-Schutz für den Lack inkl. Felgenreparatur und Ozonbehandlung möglich." },
+  { icon: Scissors, title: "Folienentfernung", price: null, desc: "Individueller Preis je nach Fahrzeug und Größe der Folierung." },
+  { icon: Wrench, title: "Motorwäsche", price: 80, desc: "Gründliche Motorwäsche mit anschließender Versiegelung." },
+  { icon: Caravan, title: "Wohnwagen-Aufbereitung", price: null, desc: "Individueller Preis je nach Größe und Zustand des Wohnwagens." },
 ];
 
 const trustItems = [
@@ -352,8 +357,17 @@ function Services() {
                   <s.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-right">
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">ab</div>
-                  <div className="text-2xl font-display font-bold text-primary">{s.price},00 €</div>
+                  {s.price !== null ? (
+                    <>
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground">ab</div>
+                      <div className="text-2xl font-display font-bold text-primary">{s.price},00 €</div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground">Preis</div>
+                      <div className="text-2xl font-display font-bold text-primary">Individuell</div>
+                    </>
+                  )}
                 </div>
               </div>
               <h3 className="mt-5 text-xl font-bold text-primary">{s.title}</h3>

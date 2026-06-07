@@ -8,11 +8,8 @@ import galleryTaycan from "@/assets/gallery-porsche-taycan.jpg";
 import galleryLambo from "@/assets/gallery-lambo.jpg";
 import gallery911 from "@/assets/gallery-porsche-911.jpg";
 import galleryMustang from "@/assets/gallery-mustang.webp";
-import beforePaint from "@/assets/before-paint.jpg";
 import afterPaint from "@/assets/after-paint.jpg";
-import beforeInterior from "@/assets/before-interior.jpg";
 import interior from "@/assets/interior.jpg";
-import beforeSeal from "@/assets/before-seal.jpg";
 import wax from "@/assets/wax.jpg";
 import detailing from "@/assets/detailing.jpg";
 import heroCar from "@/assets/hero-car.jpg";
@@ -85,12 +82,9 @@ const images: GalleryImage[] = [
   { src: g63HeckShop.url, alt: "Mercedes-AMG G 63 weiß – Heckansicht vor dem Autokosmetik Studio", category: "Kundenfahrzeuge" },
   { src: porsche997Heck.url, alt: "Porsche 911 (997) Turbo schwarz – Heckansicht nach Aufbereitung", category: "Kundenfahrzeuge" },
   { src: rangeRoverSport.url, alt: "Range Rover Sport grau – Frontansicht nach Lackaufbereitung", category: "Kundenfahrzeuge" },
-  { src: beforePaint, alt: "Lackaufbereitung Vorher — matt und verschmutzt", category: "Lackaufbereitung" },
-  { src: afterPaint, alt: "Lackaufbereitung Nachher — tiefen Glanz und Spiegelglanz", category: "Lackaufbereitung" },
-  { src: beforeInterior, alt: "Innenraum Vorher — verschmutzte Polster und Oberflächen", category: "Innenraum" },
-  { src: interior, alt: "Innenraum Nachher — gereinigt und aufbereitet", category: "Innenraum" },
-  { src: beforeSeal, alt: "Versiegelung Vorher — wasserablaufender Lack", category: "Versiegelung" },
-  { src: wax, alt: "Versiegelung Nachher — Wasser perlt ab", category: "Versiegelung" },
+  { src: afterPaint, alt: "Lackaufbereitung — tiefen Glanz und Spiegelglanz", category: "Lackaufbereitung" },
+  { src: interior, alt: "Innenraum — gereinigt und aufbereitet", category: "Innenraum" },
+  { src: wax, alt: "Versiegelung — Wasser perlt ab", category: "Versiegelung" },
   { src: detailing, alt: "Professionelle Detailing-Aufbereitung", category: "Detailing" },
   { src: heroCar, alt: "Hochglanz Fahrzeug nach Aufbereitung", category: "Ergebnisse" },
   { src: galleryTaycan, alt: "Porsche Taycan — aufbereitet in Lilienthal", category: "Ergebnisse" },

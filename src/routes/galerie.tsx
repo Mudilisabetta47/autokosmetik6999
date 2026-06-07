@@ -28,6 +28,15 @@ import bmwM850Front from "@/assets/bmw-m850i-cabrio-front.jpg.asset.json";
 import porsche991Seite from "@/assets/porsche-991-schwarz-seite.jpg.asset.json";
 import bmwM850Seite from "@/assets/bmw-m850i-cabrio-seite.jpg.asset.json";
 import g63Heck from "@/assets/g63-amg-weiss-heck.jpg.asset.json";
+import mercedesCCabrio from "@/assets/mercedes-c-cabrio-grau.jpg.asset.json";
+import bmwX6M40iHeck from "@/assets/bmw-x6-m40i-heck.jpg.asset.json";
+import porsche924Seite from "@/assets/porsche-924-rot-seite.jpg.asset.json";
+import amgGtSchwarzShop from "@/assets/amg-gt-schwarz-shop.jpg.asset.json";
+import bmwX6SchwarzHeck from "@/assets/bmw-x6-schwarz-heck.jpg.asset.json";
+import g63HeckShop from "@/assets/g63-amg-weiss-heck-shop.jpg.asset.json";
+import amgGtSchwarzFront from "@/assets/amg-gt-schwarz-front.jpg.asset.json";
+import porsche997Heck from "@/assets/porsche-997-turbo-heck.jpg.asset.json";
+import rangeRoverSport from "@/assets/range-rover-sport-grau.jpg.asset.json";
 
 export const Route = createFileRoute("/galerie")({
   head: () => ({
@@ -67,6 +76,15 @@ const images: GalleryImage[] = [
   { src: porsche997.url, alt: "Porsche 911 (997) Turbo schwarz – Frontansicht nach Politur", category: "Kundenfahrzeuge" },
   { src: porscheBoxster.url, alt: "Porsche Boxster schwarz – Hochglanz Lackaufbereitung", category: "Kundenfahrzeuge" },
   { src: porsche924.url, alt: "Porsche 924 rot – Oldtimer-Aufbereitung", category: "Kundenfahrzeuge" },
+  { src: mercedesCCabrio.url, alt: "Mercedes-Benz C-Klasse Cabrio grau – Aufbereitung vor dem Studio in Lilienthal", category: "Kundenfahrzeuge" },
+  { src: bmwX6M40iHeck.url, alt: "BMW X6 M40i schwarz – Heckansicht nach Hochglanzaufbereitung", category: "Kundenfahrzeuge" },
+  { src: bmwX6SchwarzHeck.url, alt: "BMW X6 schwarz – Heckansicht nach Politur und Versiegelung", category: "Kundenfahrzeuge" },
+  { src: porsche924Seite.url, alt: "Porsche 924 rot – Seitenansicht Oldtimer-Aufbereitung", category: "Kundenfahrzeuge" },
+  { src: amgGtSchwarzShop.url, alt: "Mercedes-AMG GT schwarz – Hochglanz vor dem Studio in Lilienthal", category: "Kundenfahrzeuge" },
+  { src: amgGtSchwarzFront.url, alt: "Mercedes-AMG GT schwarz – Frontansicht nach Komplettaufbereitung", category: "Kundenfahrzeuge" },
+  { src: g63HeckShop.url, alt: "Mercedes-AMG G 63 weiß – Heckansicht vor dem Autokosmetik Studio", category: "Kundenfahrzeuge" },
+  { src: porsche997Heck.url, alt: "Porsche 911 (997) Turbo schwarz – Heckansicht nach Aufbereitung", category: "Kundenfahrzeuge" },
+  { src: rangeRoverSport.url, alt: "Range Rover Sport grau – Frontansicht nach Lackaufbereitung", category: "Kundenfahrzeuge" },
   { src: beforePaint, alt: "Lackaufbereitung Vorher — matt und verschmutzt", category: "Lackaufbereitung" },
   { src: afterPaint, alt: "Lackaufbereitung Nachher — tiefen Glanz und Spiegelglanz", category: "Lackaufbereitung" },
   { src: beforeInterior, alt: "Innenraum Vorher — verschmutzte Polster und Oberflächen", category: "Innenraum" },

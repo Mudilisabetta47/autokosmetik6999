@@ -28,6 +28,15 @@ import bmwM850Front from "@/assets/bmw-m850i-cabrio-front.jpg.asset.json";
 import porsche991Seite from "@/assets/porsche-991-schwarz-seite.jpg.asset.json";
 import bmwM850Seite from "@/assets/bmw-m850i-cabrio-seite.jpg.asset.json";
 import g63Heck from "@/assets/g63-amg-weiss-heck.jpg.asset.json";
+import mercedesCCabrio from "@/assets/mercedes-c-cabrio-grau.jpg.asset.json";
+import bmwX6M40iHeck from "@/assets/bmw-x6-m40i-heck.jpg.asset.json";
+import porsche924Seite from "@/assets/porsche-924-rot-seite.jpg.asset.json";
+import amgGtSchwarzShop from "@/assets/amg-gt-schwarz-shop.jpg.asset.json";
+import bmwX6SchwarzHeck from "@/assets/bmw-x6-schwarz-heck.jpg.asset.json";
+import g63HeckShop from "@/assets/g63-amg-weiss-heck-shop.jpg.asset.json";
+import amgGtSchwarzFront from "@/assets/amg-gt-schwarz-front.jpg.asset.json";
+import porsche997Heck from "@/assets/porsche-997-turbo-heck.jpg.asset.json";
+import rangeRoverSport from "@/assets/range-rover-sport-grau.jpg.asset.json";
 
 export const Route = createFileRoute("/galerie")({
   head: () => ({

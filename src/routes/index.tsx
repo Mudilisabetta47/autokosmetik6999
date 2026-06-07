@@ -4,7 +4,8 @@ import {
   Phone, MapPin, Clock, Sparkles, Shield, Droplets, Car, Wrench,
   Sofa, Wind, Gem, CheckCircle2, ArrowRight, Star, Menu, X, Scissors, Caravan,
 } from "lucide-react";
-import heroCar from "@/assets/hero-car.jpg";
+import heroCarAsset from "@/assets/shop-front-porsches.png.asset.json";
+const heroCar = heroCarAsset.url;
 import detailing from "@/assets/detailing.jpg";
 import interior from "@/assets/interior.jpg";
 import wax from "@/assets/wax.jpg";

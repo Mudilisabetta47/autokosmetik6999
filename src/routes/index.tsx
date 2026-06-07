@@ -137,7 +137,7 @@ const services: Service[] = [
   { icon: Scissors, title: "Folienentfernung", price: null, desc: "Individueller Preis je nach Fahrzeug und Größe der Folierung." },
   { icon: Wrench, title: "Motorwäsche", price: 80, desc: "Gründliche Motorwäsche mit anschließender Versiegelung." },
   { icon: Caravan, title: "Wohnwagen-Aufbereitung", price: null, desc: "Individueller Preis je nach Größe und Zustand des Wohnwagens." },
-  { icon: Droplets, title: "Orsun-Behandlung", price: 100, desc: "Spezialbehandlung für langanhaltenden Schutz und Glanz." },
+  { icon: Droplets, title: "Orsun-Behandlung", price: 100, desc: "Geruchsentfernung für empfindliche Fahrzeuge – Zigarettenrauch, Nikotin- und Tiergerüche werden neutralisiert." },
 ];
 
 const trustItems = [

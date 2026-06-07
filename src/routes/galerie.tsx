@@ -57,6 +57,16 @@ type GalleryImage = {
 };
 
 const images: GalleryImage[] = [
+  { src: porsche911CarreraS.url, alt: "Porsche 911 Carrera S schwarz – Aufbereitung vor dem Studio in Lilienthal", category: "Kundenfahrzeuge" },
+  { src: porsche991Seite.url, alt: "Porsche 991 schwarz – Hochglanz nach Lackaufbereitung", category: "Kundenfahrzeuge" },
+  { src: g63Front.url, alt: "Mercedes-AMG G 63 weiß – Frontansicht nach Komplettaufbereitung", category: "Kundenfahrzeuge" },
+  { src: g63Heck.url, alt: "Mercedes-AMG G 63 weiß – Heckansicht nach Aufbereitung", category: "Kundenfahrzeuge" },
+  { src: bmwM850Front.url, alt: "BMW M850i Cabrio weiß – Frontansicht nach Aufbereitung", category: "Kundenfahrzeuge" },
+  { src: bmwM850Seite.url, alt: "BMW M850i Cabrio weiß – Seitenansicht vor dem Studio", category: "Kundenfahrzeuge" },
+  { src: bmwM850Heck.url, alt: "BMW M850i Cabrio weiß – Heckansicht", category: "Kundenfahrzeuge" },
+  { src: porsche997.url, alt: "Porsche 911 (997) Turbo schwarz – Frontansicht nach Politur", category: "Kundenfahrzeuge" },
+  { src: porscheBoxster.url, alt: "Porsche Boxster schwarz – Hochglanz Lackaufbereitung", category: "Kundenfahrzeuge" },
+  { src: porsche924.url, alt: "Porsche 924 rot – Oldtimer-Aufbereitung", category: "Kundenfahrzeuge" },
   { src: beforePaint, alt: "Lackaufbereitung Vorher — matt und verschmutzt", category: "Lackaufbereitung" },
   { src: afterPaint, alt: "Lackaufbereitung Nachher — tiefen Glanz und Spiegelglanz", category: "Lackaufbereitung" },
   { src: beforeInterior, alt: "Innenraum Vorher — verschmutzte Polster und Oberflächen", category: "Innenraum" },

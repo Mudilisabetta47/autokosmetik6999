@@ -166,6 +166,7 @@ function Index() {
 
       <Nav />
       <Hero />
+      <ShopSlider />
       <TrustBar />
       <Services />
       <Why />

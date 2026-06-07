@@ -817,3 +817,52 @@ function Gallery() {
   );
 }
 
+const shopSlides = [
+  { src: shopFront.url, alt: "autokosmetik Lilienthal – Standort Falkenberger Landstr. 77 mit aufbereiteten Porsche 911 Fahrzeugen" },
+];
+
+function ShopSlider() {
+  return (
+    <section className="py-16 md:py-24 bg-background">
+      <div className="container-x">
+        <div className="max-w-2xl mb-8 md:mb-12">
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent-foreground/80">Unser Standort</span>
+          <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-primary">
+            Besuchen Sie uns in Lilienthal
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg">
+            Falkenberger Landstraße 77 – Ihr Fachbetrieb für Fahrzeugaufbereitung.
+          </p>
+        </div>
+
+        <Carousel
+          opts={{ loop: true, align: "start" }}
+          plugins={[Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+          className="relative"
+        >
+          <CarouselContent>
+            {shopSlides.map((s, i) => (
+              <CarouselItem key={i}>
+                <div className="relative aspect-[16/10] md:aspect-[16/9] overflow-hidden rounded-3xl bg-card" style={{ boxShadow: "var(--shadow-card)" }}>
+                  <img src={s.src} alt={s.alt} loading="lazy" className="h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <p className="text-xs md:text-sm font-semibold uppercase tracking-wider opacity-90">autokosmetik Lilienthal</p>
+                    <p className="mt-1 text-lg md:text-2xl font-bold drop-shadow">Falkenberger Landstr. 77 · 28865 Lilienthal</p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {shopSlides.length > 1 && (
+            <>
+              <CarouselPrevious className="left-4 md:-left-6" />
+              <CarouselNext className="right-4 md:-right-6" />
+            </>
+          )}
+        </Carousel>
+      </div>
+    </section>
+  );
+}
+

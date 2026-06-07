@@ -63,7 +63,7 @@ export const Route = createFileRoute("/")({
           priceRange: "€€",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Falkenberger Landstraße 77",
+            streetAddress: "Falkenberger Landstraße 75",
             postalCode: "28865",
             addressLocality: "Lilienthal",
             addressRegion: "Niedersachsen",
@@ -91,7 +91,7 @@ export const Route = createFileRoute("/")({
           ],
           paymentAccepted: ["Bargeld", "EC-Karte", "Überweisung"],
           currenciesAccepted: "EUR",
-          hasMap: "https://www.google.com/maps?q=Falkenberger+Landstraße+77,+28865+Lilienthal",
+          hasMap: "https://www.google.com/maps?q=Falkenberger+Landstraße+75,+28865+Lilienthal",
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "5.0",
@@ -203,7 +203,7 @@ function Nav() {
             <div className="flex items-center gap-x-4 overflow-hidden">
               <span className="hidden sm:inline-flex items-center gap-2 shrink-0">
                 <MapPin className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
-                <span className="truncate">FALKENBERGER LANDSTR. 77, LILIENTHAL</span>
+                <span className="truncate">FALKENBERGER LANDSTR. 75, LILIENTHAL</span>
               </span>
               <span className="inline-flex items-center gap-2 shrink-0">
                 <Clock className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
@@ -291,7 +291,7 @@ function Hero() {
   return (
     <section id="top" className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
       <div className="absolute inset-0">
-        <img src={heroCar} alt="autokosmetik Lilienthal — Studio in der Falkenberger Landstraße 77" width={1920} height={1080} className="w-full h-full object-cover" />
+        <img src={heroCar} alt="autokosmetik Lilienthal — Studio in der Falkenberger Landstraße 75" width={1920} height={1080} className="w-full h-full object-cover" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.16_0.06_258)]/90 via-[oklch(0.16_0.06_258)]/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.18_0.06_258)] via-transparent to-transparent" />
@@ -499,7 +499,7 @@ function Contact() {
           <div className="rounded-3xl bg-card p-8 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
             <div className="space-y-6">
               <ContactRow icon={MapPin} title="Adresse">
-                <p>autokosmetik<br />Falkenberger Landstraße 77<br />28865 Lilienthal</p>
+                <p>autokosmetik<br />Falkenberger Landstraße 75<br />28865 Lilienthal</p>
                 <p className="text-sm text-muted-foreground mt-1">gegenüber von Opel Meyer</p>
               </ContactRow>
               <ContactRow icon={Phone} title="Telefon / Mobil">
@@ -517,8 +517,8 @@ function Contact() {
 
           <div className="rounded-3xl overflow-hidden border border-border min-h-[400px] relative" style={{ boxShadow: "var(--shadow-card)" }}>
             <iframe
-              title="Standort autokosmetik – Falkenberger Landstraße 77, 28865 Lilienthal"
-              src="https://www.google.com/maps?q=Falkenberger+Landstra%C3%9Fe+77%2C+28865+Lilienthal&output=embed"
+              title="Standort autokosmetik – Falkenberger Landstraße 75, 28865 Lilienthal"
+              src="https://www.google.com/maps?q=Falkenberger+Landstra%C3%9Fe+75%2C+28865+Lilienthal&output=embed"
               className="w-full h-full absolute inset-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -616,7 +616,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Wo finde ich die Autokosmetik in Lilienthal?",
-    text: "Sie finden uns in der Falkenberger Landstraße 77, 28865 Lilienthal – verkehrsgünstig zwischen Lilienthal, Bremen und Osterholz-Scharmbeck.",
+    text: "Sie finden uns in der Falkenberger Landstraße 75, 28865 Lilienthal – verkehrsgünstig zwischen Lilienthal, Bremen und Osterholz-Scharmbeck.",
   },
   {
     q: "Was kostet eine professionelle Autoaufbereitung?",
@@ -717,7 +717,7 @@ function Footer() {
         <div className="md:col-span-3">
           <h4 className="font-display font-semibold text-sm uppercase tracking-wider text-white/90 mb-4">Kontakt</h4>
           <ul className="space-y-2.5 text-sm text-white/70">
-            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground" /><span>Falkenberger Landstraße 77<br />28865 Lilienthal</span></li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground" /><span>Falkenberger Landstraße 75<br />28865 Lilienthal</span></li>
             <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0 text-accent-foreground" /><a href={`tel:${TEL}`} className="hover:text-white transition">{TEL_DISPLAY}</a></li>
           </ul>
         </div>
@@ -821,7 +821,7 @@ function Gallery() {
 }
 
 const shopSlides = [
-  { src: shopFront.url, alt: "autokosmetik Lilienthal – Standort Falkenberger Landstr. 77 mit aufbereiteten Porsche 911 Fahrzeugen" },
+  { src: shopFront.url, alt: "autokosmetik Lilienthal – Standort Falkenberger Landstr. 75 mit aufbereiteten Porsche 911 Fahrzeugen" },
 ];
 
 function ShopSlider() {
@@ -834,7 +834,7 @@ function ShopSlider() {
             Besuchen Sie uns in Lilienthal
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Falkenberger Landstraße 77 – Ihr Fachbetrieb für Fahrzeugaufbereitung.
+            Falkenberger Landstraße 75 – Ihr Fachbetrieb für Fahrzeugaufbereitung.
           </p>
         </div>
 
@@ -851,7 +851,7 @@ function ShopSlider() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6 text-white">
                     <p className="text-xs md:text-sm font-semibold uppercase tracking-wider opacity-90">autokosmetik Lilienthal</p>
-                    <p className="mt-1 text-lg md:text-2xl font-bold drop-shadow">Falkenberger Landstr. 77 · 28865 Lilienthal</p>
+                    <p className="mt-1 text-lg md:text-2xl font-bold drop-shadow">Falkenberger Landstr. 75 · 28865 Lilienthal</p>
                   </div>
                 </div>
               </CarouselItem>

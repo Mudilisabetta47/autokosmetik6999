@@ -115,7 +115,7 @@ function GaleriePage() {
             <div className="flex items-center gap-x-4 overflow-hidden">
               <span className="hidden sm:inline-flex items-center gap-2 shrink-0">
                 <MapPin className="h-3.5 w-3.5 text-accent-foreground shrink-0" />
-                <span className="truncate">FALKENBERGER LANDSTR. 77, LILIENTHAL</span>
+                <span className="truncate">FALKENBERGER LANDSTR. 75, LILIENTHAL</span>
               </span>
               <span className="inline-flex items-center gap-2 shrink-0">
                 TERMINE NACH VEREINBARUNG
@@ -281,7 +281,7 @@ function GaleriePage() {
           <div className="md:col-span-3">
             <h4 className="font-display font-semibold text-sm uppercase tracking-wider text-white/90 mb-4">Kontakt</h4>
             <ul className="space-y-2.5 text-sm text-white/70">
-              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground" /><span>Falkenberger Landstraße 77<br />28865 Lilienthal</span></li>
+              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground" /><span>Falkenberger Landstraße 75<br />28865 Lilienthal</span></li>
               <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0 text-accent-foreground" /><a href="tel:+4915234551063" className="hover:text-white transition">0152 / 345 510 63</a></li>
             </ul>
           </div>

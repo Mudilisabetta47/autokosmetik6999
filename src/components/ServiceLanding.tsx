@@ -102,29 +102,41 @@ export function ServiceLanding(p: ServiceLandingProps) {
 
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-        <div className="container-x relative py-16 md:py-24">
-          <Link to="/leistungen" className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-semibold">
-            <ArrowLeft className="h-4 w-4" /> Alle Leistungen
-          </Link>
-          {p.badge && (
-            <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 text-xs font-semibold text-white border border-white/20">
-              <Shield className="h-3.5 w-3.5" /> {p.badge}
-            </span>
-          )}
-          <h1 className="mt-4 font-display font-extrabold text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] max-w-4xl">
-            {p.title}
-          </h1>
-          <p className="mt-5 text-lg md:text-xl text-white/85 max-w-3xl">{p.tagline}</p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href={`tel:${TEL}`} className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold text-primary shadow-[var(--shadow-glow)]" style={{ background: "var(--gradient-accent)" }}>
-              <Phone className="h-5 w-5" /> Termin in Lilienthal vereinbaren
-            </a>
-            <span className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold text-white border border-white/30">
-              {p.priceLabel}
-            </span>
+        <div className="container-x relative py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <Link to="/leistungen" className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-semibold">
+              <ArrowLeft className="h-4 w-4" /> Alle Leistungen
+            </Link>
+            {p.badge && (
+              <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 text-xs font-semibold text-white border border-white/20">
+                <Shield className="h-3.5 w-3.5" /> {p.badge}
+              </span>
+            )}
+            <h1 className="mt-4 font-display font-extrabold text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05]">
+              {p.title}
+            </h1>
+            <p className="mt-5 text-lg md:text-xl text-white/85">{p.tagline}</p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href={`tel:${TEL}`} className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold text-primary shadow-[var(--shadow-glow)]" style={{ background: "var(--gradient-accent)" }}>
+                <Phone className="h-5 w-5" /> Termin in Lilienthal vereinbaren
+              </a>
+              <span className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold text-white border border-white/30">
+                {p.priceLabel}
+              </span>
+            </div>
+          </div>
+          <div className="relative">
+            <img
+              src={imgs.hero}
+              alt={`${p.title} – Referenz aus unserem Studio in Lilienthal`}
+              className="w-full h-[280px] md:h-[420px] object-cover rounded-3xl border border-white/15"
+              style={{ boxShadow: "var(--shadow-card)" }}
+              loading="eager"
+            />
           </div>
         </div>
       </section>
+
 
       {/* Intro + benefits */}
       <section className="py-16 md:py-20 bg-background">

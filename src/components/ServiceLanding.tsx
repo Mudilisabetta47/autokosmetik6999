@@ -1,6 +1,42 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, CheckCircle2, ArrowRight, ArrowLeft, Clock, Shield } from "lucide-react";
 import logoLight from "@/assets/logo-light.png";
+import amgGtFront from "@/assets/amg-gt-schwarz-front.jpg.asset.json";
+import amgGtShop from "@/assets/amg-gt-schwarz-shop.jpg.asset.json";
+import bmwM850Front from "@/assets/bmw-m850i-cabrio-front.jpg.asset.json";
+import bmwM850Heck from "@/assets/bmw-m850i-cabrio-heck.jpg.asset.json";
+import bmwM850Seite from "@/assets/bmw-m850i-cabrio-seite.jpg.asset.json";
+import bmwX6m40 from "@/assets/bmw-x6-m40i-heck.jpg.asset.json";
+import bmwX6Heck from "@/assets/bmw-x6-schwarz-heck.jpg.asset.json";
+import g63Front from "@/assets/g63-amg-weiss-front.jpg.asset.json";
+import g63HeckShop from "@/assets/g63-amg-weiss-heck-shop.jpg.asset.json";
+import g63Heck from "@/assets/g63-amg-weiss-heck.jpg.asset.json";
+import mercCCabrio from "@/assets/mercedes-c-cabrio-grau.jpg.asset.json";
+import porsche911 from "@/assets/porsche-911-carrera-s-schwarz.jpg.asset.json";
+import porsche924Seite from "@/assets/porsche-924-rot-seite.jpg.asset.json";
+import porsche924 from "@/assets/porsche-924-rot.jpg.asset.json";
+import porsche991 from "@/assets/porsche-991-schwarz-seite.jpg.asset.json";
+import porsche997Front from "@/assets/porsche-997-turbo-front.jpg.asset.json";
+import porsche997Heck from "@/assets/porsche-997-turbo-heck.jpg.asset.json";
+import porscheBoxster from "@/assets/porsche-boxster-schwarz.jpg.asset.json";
+import rangeRover from "@/assets/range-rover-sport-grau.jpg.asset.json";
+import shopFrontPorsches from "@/assets/shop-front-porsches.png.asset.json";
+
+const SERVICE_IMAGES: Record<string, { hero: string; gallery: string[] }> = {
+  "lackaufbereitung":          { hero: porsche911.url,        gallery: [porsche997Front.url, amgGtFront.url, bmwM850Seite.url] },
+  "hochglanzversiegelung":     { hero: amgGtFront.url,        gallery: [porsche991.url, bmwM850Front.url, g63Front.url] },
+  "nano-versiegelung":         { hero: porsche997Front.url,   gallery: [porsche911.url, bmwX6Heck.url, amgGtShop.url] },
+  "carnauba-wachs":            { hero: bmwM850Front.url,      gallery: [porsche924.url, mercCCabrio.url, porsche991.url] },
+  "innenreinigung":            { hero: mercCCabrio.url,       gallery: [bmwM850Heck.url, porsche924Seite.url, rangeRover.url] },
+  "polster-leder":             { hero: bmwM850Heck.url,       gallery: [mercCCabrio.url, rangeRover.url, porsche911.url] },
+  "orsun-geruchsentfernung":   { hero: rangeRover.url,        gallery: [mercCCabrio.url, bmwX6m40.url, porscheBoxster.url] },
+  "motorwaesche":              { hero: g63Heck.url,           gallery: [g63HeckShop.url, bmwX6m40.url, porsche997Heck.url] },
+  "folienentfernung":          { hero: porsche924.url,        gallery: [porsche924Seite.url, porscheBoxster.url, amgGtShop.url] },
+  "verkaufsaufbereitung":      { hero: shopFrontPorsches.url, gallery: [porsche991.url, bmwM850Seite.url, mercCCabrio.url] },
+  "wohnwagen-aufbereitung":    { hero: bmwX6Heck.url,         gallery: [bmwX6m40.url, rangeRover.url, g63Front.url] },
+};
+
+const FALLBACK_IMAGES = { hero: amgGtFront.url, gallery: [porsche911.url, bmwM850Front.url, g63Front.url] };
 
 const TEL = "+4915234551063";
 const TEL_DISPLAY = "0152 / 345 510 63";
@@ -28,6 +64,7 @@ export type ServiceLandingProps = {
 };
 
 export function ServiceLanding(p: ServiceLandingProps) {
+  const imgs = SERVICE_IMAGES[p.slug] ?? FALLBACK_IMAGES;
   return (
     <div className="min-h-screen bg-background text-foreground">
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,29 +102,41 @@ export function ServiceLanding(p: ServiceLandingProps) {
 
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-        <div className="container-x relative py-16 md:py-24">
-          <Link to="/leistungen" className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-semibold">
-            <ArrowLeft className="h-4 w-4" /> Alle Leistungen
-          </Link>
-          {p.badge && (
-            <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 text-xs font-semibold text-white border border-white/20">
-              <Shield className="h-3.5 w-3.5" /> {p.badge}
-            </span>
-          )}
-          <h1 className="mt-4 font-display font-extrabold text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] max-w-4xl">
-            {p.title}
-          </h1>
-          <p className="mt-5 text-lg md:text-xl text-white/85 max-w-3xl">{p.tagline}</p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href={`tel:${TEL}`} className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold text-primary shadow-[var(--shadow-glow)]" style={{ background: "var(--gradient-accent)" }}>
-              <Phone className="h-5 w-5" /> Termin in Lilienthal vereinbaren
-            </a>
-            <span className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold text-white border border-white/30">
-              {p.priceLabel}
-            </span>
+        <div className="container-x relative py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <Link to="/leistungen" className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-semibold">
+              <ArrowLeft className="h-4 w-4" /> Alle Leistungen
+            </Link>
+            {p.badge && (
+              <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 text-xs font-semibold text-white border border-white/20">
+                <Shield className="h-3.5 w-3.5" /> {p.badge}
+              </span>
+            )}
+            <h1 className="mt-4 font-display font-extrabold text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05]">
+              {p.title}
+            </h1>
+            <p className="mt-5 text-lg md:text-xl text-white/85">{p.tagline}</p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href={`tel:${TEL}`} className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold text-primary shadow-[var(--shadow-glow)]" style={{ background: "var(--gradient-accent)" }}>
+                <Phone className="h-5 w-5" /> Termin in Lilienthal vereinbaren
+              </a>
+              <span className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold text-white border border-white/30">
+                {p.priceLabel}
+              </span>
+            </div>
+          </div>
+          <div className="relative">
+            <img
+              src={imgs.hero}
+              alt={`${p.title} – Referenz aus unserem Studio in Lilienthal`}
+              className="w-full h-[280px] md:h-[420px] object-cover rounded-3xl border border-white/15"
+              style={{ boxShadow: "var(--shadow-card)" }}
+              loading="eager"
+            />
           </div>
         </div>
       </section>
+
 
       {/* Intro + benefits */}
       <section className="py-16 md:py-20 bg-background">
@@ -111,6 +160,23 @@ export function ServiceLanding(p: ServiceLandingProps) {
           </aside>
         </div>
       </section>
+
+      {/* Gallery strip */}
+      <section className="pb-4 bg-background">
+        <div className="container-x grid sm:grid-cols-3 gap-4">
+          {imgs.gallery.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${p.title} – Beispiel ${i + 1} aus Lilienthal`}
+              className="w-full h-48 md:h-56 object-cover rounded-2xl border border-border"
+              style={{ boxShadow: "var(--shadow-card)" }}
+              loading="lazy"
+            />
+          ))}
+        </div>
+      </section>
+
 
       {/* Process */}
       <section className="py-16 md:py-20 bg-secondary">

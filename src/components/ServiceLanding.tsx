@@ -64,6 +64,7 @@ export type ServiceLandingProps = {
 };
 
 export function ServiceLanding(p: ServiceLandingProps) {
+  const imgs = SERVICE_IMAGES[p.slug] ?? FALLBACK_IMAGES;
   return (
     <div className="min-h-screen bg-background text-foreground">
       <link rel="preconnect" href="https://fonts.googleapis.com" />

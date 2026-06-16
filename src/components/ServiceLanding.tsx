@@ -171,10 +171,10 @@ export function ServiceLanding(p: ServiceLandingProps) {
             <h2 className="text-2xl md:text-3xl font-extrabold text-primary">Weitere Leistungen</h2>
             <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {p.related.map((r) => (
-                <Link key={r.slug} to={`/leistungen/${r.slug}` as string} className="group rounded-2xl bg-card p-6 border border-border hover:border-accent transition flex items-center justify-between" style={{ boxShadow: "var(--shadow-card)" }}>
+                <a key={r.slug} href={`/leistungen/${r.slug}`} className="group rounded-2xl bg-card p-6 border border-border hover:border-accent transition flex items-center justify-between" style={{ boxShadow: "var(--shadow-card)" }}>
                   <span className="font-semibold text-primary">{r.title}</span>
                   <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-accent-foreground transition" />
-                </Link>
+                </a>
               ))}
             </div>
           </div>

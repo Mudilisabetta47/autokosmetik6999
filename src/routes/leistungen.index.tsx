@@ -72,13 +72,13 @@ function LeistungenIndex() {
         <div className="container-x">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
-              <Link key={s.slug} to={`/leistungen/${s.slug}` as string} className="group rounded-3xl bg-card p-7 border border-border hover:border-accent transition flex flex-col" style={{ boxShadow: "var(--shadow-card)" }}>
+              <a key={s.slug} href={`/leistungen/${s.slug}`} className="group rounded-3xl bg-card p-7 border border-border hover:border-accent transition flex flex-col" style={{ boxShadow: "var(--shadow-card)" }}>
                 <h2 className="text-xl font-bold text-primary">{s.title}</h2>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent-foreground">
                   Mehr erfahren <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
                 </span>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

@@ -387,10 +387,15 @@ function Services() {
           ))}
         </div>
 
-        <p className="mt-10 text-sm text-muted-foreground max-w-3xl">
-          <strong className="text-foreground">Preishinweis:</strong> Alle Preise beziehen sich auf ein Fahrzeug der Mittelklasse in normal verschmutztem Zustand.
-          Größere oder besonders verschmutzte Fahrzeuge werden mit Aufschlag berechnet: Großraumlimousinen und Geländewagen +20 %, Transporter +40 %.
-        </p>
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground max-w-3xl">
+            <strong className="text-foreground">Preishinweis:</strong> Alle Preise beziehen sich auf ein Fahrzeug der Mittelklasse in normal verschmutztem Zustand.
+            Größere oder besonders verschmutzte Fahrzeuge werden mit Aufschlag berechnet: Großraumlimousinen und Geländewagen +20 %, Transporter +40 %.
+          </p>
+          <Link to="/leistungen" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold hover:opacity-90 transition shrink-0">
+            Alle Leistungen im Detail <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );

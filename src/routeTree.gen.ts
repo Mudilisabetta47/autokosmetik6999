@@ -10,14 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as LeistungenRouteImport } from './routes/leistungen'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LeistungenIndexRouteImport } from './routes/leistungen.index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeistungenRoute = LeistungenRouteImport.update({
+  id: '/leistungen',
+  path: '/leistungen',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImpressumRoute = ImpressumRouteImport.update({
@@ -40,13 +47,20 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeistungenIndexRoute = LeistungenIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LeistungenRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
   '/galerie': typeof GalerieRoute
   '/impressum': typeof ImpressumRoute
+  '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/leistungen/': typeof LeistungenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +68,7 @@ export interface FileRoutesByTo {
   '/galerie': typeof GalerieRoute
   '/impressum': typeof ImpressumRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/leistungen': typeof LeistungenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,20 +76,37 @@ export interface FileRoutesById {
   '/datenschutz': typeof DatenschutzRoute
   '/galerie': typeof GalerieRoute
   '/impressum': typeof ImpressumRoute
+  '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/leistungen/': typeof LeistungenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/datenschutz' | '/galerie' | '/impressum' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/datenschutz'
+    | '/galerie'
+    | '/impressum'
+    | '/leistungen'
+    | '/sitemap.xml'
+    | '/leistungen/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/datenschutz' | '/galerie' | '/impressum' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/datenschutz'
+    | '/galerie'
+    | '/impressum'
+    | '/sitemap.xml'
+    | '/leistungen'
   id:
     | '__root__'
     | '/'
     | '/datenschutz'
     | '/galerie'
     | '/impressum'
+    | '/leistungen'
     | '/sitemap.xml'
+    | '/leistungen/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -82,6 +114,7 @@ export interface RootRouteChildren {
   DatenschutzRoute: typeof DatenschutzRoute
   GalerieRoute: typeof GalerieRoute
   ImpressumRoute: typeof ImpressumRoute
+  LeistungenRoute: typeof LeistungenRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -92,6 +125,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen': {
+      id: '/leistungen'
+      path: '/leistungen'
+      fullPath: '/leistungen'
+      preLoaderRoute: typeof LeistungenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/impressum': {
@@ -122,14 +162,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/leistungen/': {
+      id: '/leistungen/'
+      path: '/'
+      fullPath: '/leistungen/'
+      preLoaderRoute: typeof LeistungenIndexRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
   }
 }
+
+interface LeistungenRouteChildren {
+  LeistungenIndexRoute: typeof LeistungenIndexRoute
+}
+
+const LeistungenRouteChildren: LeistungenRouteChildren = {
+  LeistungenIndexRoute: LeistungenIndexRoute,
+}
+
+const LeistungenRouteWithChildren = LeistungenRoute._addFileChildren(
+  LeistungenRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DatenschutzRoute: DatenschutzRoute,
   GalerieRoute: GalerieRoute,
   ImpressumRoute: ImpressumRoute,
+  LeistungenRoute: LeistungenRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport

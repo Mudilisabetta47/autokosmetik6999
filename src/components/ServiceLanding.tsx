@@ -161,6 +161,23 @@ export function ServiceLanding(p: ServiceLandingProps) {
         </div>
       </section>
 
+      {/* Gallery strip */}
+      <section className="pb-4 bg-background">
+        <div className="container-x grid sm:grid-cols-3 gap-4">
+          {imgs.gallery.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${p.title} – Beispiel ${i + 1} aus Lilienthal`}
+              className="w-full h-48 md:h-56 object-cover rounded-2xl border border-border"
+              style={{ boxShadow: "var(--shadow-card)" }}
+              loading="lazy"
+            />
+          ))}
+        </div>
+      </section>
+
+
       {/* Process */}
       <section className="py-16 md:py-20 bg-secondary">
         <div className="container-x">

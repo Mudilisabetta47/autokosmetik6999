@@ -10,14 +10,32 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as LeistungenRouteImport } from './routes/leistungen'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LeistungenIndexRouteImport } from './routes/leistungen.index'
+import { Route as LeistungenWohnwagenAufbereitungRouteImport } from './routes/leistungen.wohnwagen-aufbereitung'
+import { Route as LeistungenVerkaufsaufbereitungRouteImport } from './routes/leistungen.verkaufsaufbereitung'
+import { Route as LeistungenPolsterLederRouteImport } from './routes/leistungen.polster-leder'
+import { Route as LeistungenOrsunGeruchsentfernungRouteImport } from './routes/leistungen.orsun-geruchsentfernung'
+import { Route as LeistungenNanoVersiegelungRouteImport } from './routes/leistungen.nano-versiegelung'
+import { Route as LeistungenMotorwaescheRouteImport } from './routes/leistungen.motorwaesche'
+import { Route as LeistungenLackaufbereitungRouteImport } from './routes/leistungen.lackaufbereitung'
+import { Route as LeistungenInnenreinigungRouteImport } from './routes/leistungen.innenreinigung'
+import { Route as LeistungenHochglanzversiegelungRouteImport } from './routes/leistungen.hochglanzversiegelung'
+import { Route as LeistungenFolienentfernungRouteImport } from './routes/leistungen.folienentfernung'
+import { Route as LeistungenCarnaubaWachsRouteImport } from './routes/leistungen.carnauba-wachs'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeistungenRoute = LeistungenRouteImport.update({
+  id: '/leistungen',
+  path: '/leistungen',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImpressumRoute = ImpressumRouteImport.update({
@@ -40,13 +58,94 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeistungenIndexRoute = LeistungenIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LeistungenRoute,
+} as any)
+const LeistungenWohnwagenAufbereitungRoute =
+  LeistungenWohnwagenAufbereitungRouteImport.update({
+    id: '/wohnwagen-aufbereitung',
+    path: '/wohnwagen-aufbereitung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenVerkaufsaufbereitungRoute =
+  LeistungenVerkaufsaufbereitungRouteImport.update({
+    id: '/verkaufsaufbereitung',
+    path: '/verkaufsaufbereitung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenPolsterLederRoute = LeistungenPolsterLederRouteImport.update({
+  id: '/polster-leder',
+  path: '/polster-leder',
+  getParentRoute: () => LeistungenRoute,
+} as any)
+const LeistungenOrsunGeruchsentfernungRoute =
+  LeistungenOrsunGeruchsentfernungRouteImport.update({
+    id: '/orsun-geruchsentfernung',
+    path: '/orsun-geruchsentfernung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenNanoVersiegelungRoute =
+  LeistungenNanoVersiegelungRouteImport.update({
+    id: '/nano-versiegelung',
+    path: '/nano-versiegelung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenMotorwaescheRoute = LeistungenMotorwaescheRouteImport.update({
+  id: '/motorwaesche',
+  path: '/motorwaesche',
+  getParentRoute: () => LeistungenRoute,
+} as any)
+const LeistungenLackaufbereitungRoute =
+  LeistungenLackaufbereitungRouteImport.update({
+    id: '/lackaufbereitung',
+    path: '/lackaufbereitung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenInnenreinigungRoute =
+  LeistungenInnenreinigungRouteImport.update({
+    id: '/innenreinigung',
+    path: '/innenreinigung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenHochglanzversiegelungRoute =
+  LeistungenHochglanzversiegelungRouteImport.update({
+    id: '/hochglanzversiegelung',
+    path: '/hochglanzversiegelung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenFolienentfernungRoute =
+  LeistungenFolienentfernungRouteImport.update({
+    id: '/folienentfernung',
+    path: '/folienentfernung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenCarnaubaWachsRoute = LeistungenCarnaubaWachsRouteImport.update({
+  id: '/carnauba-wachs',
+  path: '/carnauba-wachs',
+  getParentRoute: () => LeistungenRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
   '/galerie': typeof GalerieRoute
   '/impressum': typeof ImpressumRoute
+  '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/leistungen/carnauba-wachs': typeof LeistungenCarnaubaWachsRoute
+  '/leistungen/folienentfernung': typeof LeistungenFolienentfernungRoute
+  '/leistungen/hochglanzversiegelung': typeof LeistungenHochglanzversiegelungRoute
+  '/leistungen/innenreinigung': typeof LeistungenInnenreinigungRoute
+  '/leistungen/lackaufbereitung': typeof LeistungenLackaufbereitungRoute
+  '/leistungen/motorwaesche': typeof LeistungenMotorwaescheRoute
+  '/leistungen/nano-versiegelung': typeof LeistungenNanoVersiegelungRoute
+  '/leistungen/orsun-geruchsentfernung': typeof LeistungenOrsunGeruchsentfernungRoute
+  '/leistungen/polster-leder': typeof LeistungenPolsterLederRoute
+  '/leistungen/verkaufsaufbereitung': typeof LeistungenVerkaufsaufbereitungRoute
+  '/leistungen/wohnwagen-aufbereitung': typeof LeistungenWohnwagenAufbereitungRoute
+  '/leistungen/': typeof LeistungenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +153,18 @@ export interface FileRoutesByTo {
   '/galerie': typeof GalerieRoute
   '/impressum': typeof ImpressumRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/leistungen/carnauba-wachs': typeof LeistungenCarnaubaWachsRoute
+  '/leistungen/folienentfernung': typeof LeistungenFolienentfernungRoute
+  '/leistungen/hochglanzversiegelung': typeof LeistungenHochglanzversiegelungRoute
+  '/leistungen/innenreinigung': typeof LeistungenInnenreinigungRoute
+  '/leistungen/lackaufbereitung': typeof LeistungenLackaufbereitungRoute
+  '/leistungen/motorwaesche': typeof LeistungenMotorwaescheRoute
+  '/leistungen/nano-versiegelung': typeof LeistungenNanoVersiegelungRoute
+  '/leistungen/orsun-geruchsentfernung': typeof LeistungenOrsunGeruchsentfernungRoute
+  '/leistungen/polster-leder': typeof LeistungenPolsterLederRoute
+  '/leistungen/verkaufsaufbereitung': typeof LeistungenVerkaufsaufbereitungRoute
+  '/leistungen/wohnwagen-aufbereitung': typeof LeistungenWohnwagenAufbereitungRoute
+  '/leistungen': typeof LeistungenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,20 +172,81 @@ export interface FileRoutesById {
   '/datenschutz': typeof DatenschutzRoute
   '/galerie': typeof GalerieRoute
   '/impressum': typeof ImpressumRoute
+  '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/leistungen/carnauba-wachs': typeof LeistungenCarnaubaWachsRoute
+  '/leistungen/folienentfernung': typeof LeistungenFolienentfernungRoute
+  '/leistungen/hochglanzversiegelung': typeof LeistungenHochglanzversiegelungRoute
+  '/leistungen/innenreinigung': typeof LeistungenInnenreinigungRoute
+  '/leistungen/lackaufbereitung': typeof LeistungenLackaufbereitungRoute
+  '/leistungen/motorwaesche': typeof LeistungenMotorwaescheRoute
+  '/leistungen/nano-versiegelung': typeof LeistungenNanoVersiegelungRoute
+  '/leistungen/orsun-geruchsentfernung': typeof LeistungenOrsunGeruchsentfernungRoute
+  '/leistungen/polster-leder': typeof LeistungenPolsterLederRoute
+  '/leistungen/verkaufsaufbereitung': typeof LeistungenVerkaufsaufbereitungRoute
+  '/leistungen/wohnwagen-aufbereitung': typeof LeistungenWohnwagenAufbereitungRoute
+  '/leistungen/': typeof LeistungenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/datenschutz' | '/galerie' | '/impressum' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/datenschutz'
+    | '/galerie'
+    | '/impressum'
+    | '/leistungen'
+    | '/sitemap.xml'
+    | '/leistungen/carnauba-wachs'
+    | '/leistungen/folienentfernung'
+    | '/leistungen/hochglanzversiegelung'
+    | '/leistungen/innenreinigung'
+    | '/leistungen/lackaufbereitung'
+    | '/leistungen/motorwaesche'
+    | '/leistungen/nano-versiegelung'
+    | '/leistungen/orsun-geruchsentfernung'
+    | '/leistungen/polster-leder'
+    | '/leistungen/verkaufsaufbereitung'
+    | '/leistungen/wohnwagen-aufbereitung'
+    | '/leistungen/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/datenschutz' | '/galerie' | '/impressum' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/datenschutz'
+    | '/galerie'
+    | '/impressum'
+    | '/sitemap.xml'
+    | '/leistungen/carnauba-wachs'
+    | '/leistungen/folienentfernung'
+    | '/leistungen/hochglanzversiegelung'
+    | '/leistungen/innenreinigung'
+    | '/leistungen/lackaufbereitung'
+    | '/leistungen/motorwaesche'
+    | '/leistungen/nano-versiegelung'
+    | '/leistungen/orsun-geruchsentfernung'
+    | '/leistungen/polster-leder'
+    | '/leistungen/verkaufsaufbereitung'
+    | '/leistungen/wohnwagen-aufbereitung'
+    | '/leistungen'
   id:
     | '__root__'
     | '/'
     | '/datenschutz'
     | '/galerie'
     | '/impressum'
+    | '/leistungen'
     | '/sitemap.xml'
+    | '/leistungen/carnauba-wachs'
+    | '/leistungen/folienentfernung'
+    | '/leistungen/hochglanzversiegelung'
+    | '/leistungen/innenreinigung'
+    | '/leistungen/lackaufbereitung'
+    | '/leistungen/motorwaesche'
+    | '/leistungen/nano-versiegelung'
+    | '/leistungen/orsun-geruchsentfernung'
+    | '/leistungen/polster-leder'
+    | '/leistungen/verkaufsaufbereitung'
+    | '/leistungen/wohnwagen-aufbereitung'
+    | '/leistungen/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -82,6 +254,7 @@ export interface RootRouteChildren {
   DatenschutzRoute: typeof DatenschutzRoute
   GalerieRoute: typeof GalerieRoute
   ImpressumRoute: typeof ImpressumRoute
+  LeistungenRoute: typeof LeistungenRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -92,6 +265,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen': {
+      id: '/leistungen'
+      path: '/leistungen'
+      fullPath: '/leistungen'
+      preLoaderRoute: typeof LeistungenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/impressum': {
@@ -122,14 +302,133 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/leistungen/': {
+      id: '/leistungen/'
+      path: '/'
+      fullPath: '/leistungen/'
+      preLoaderRoute: typeof LeistungenIndexRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/wohnwagen-aufbereitung': {
+      id: '/leistungen/wohnwagen-aufbereitung'
+      path: '/wohnwagen-aufbereitung'
+      fullPath: '/leistungen/wohnwagen-aufbereitung'
+      preLoaderRoute: typeof LeistungenWohnwagenAufbereitungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/verkaufsaufbereitung': {
+      id: '/leistungen/verkaufsaufbereitung'
+      path: '/verkaufsaufbereitung'
+      fullPath: '/leistungen/verkaufsaufbereitung'
+      preLoaderRoute: typeof LeistungenVerkaufsaufbereitungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/polster-leder': {
+      id: '/leistungen/polster-leder'
+      path: '/polster-leder'
+      fullPath: '/leistungen/polster-leder'
+      preLoaderRoute: typeof LeistungenPolsterLederRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/orsun-geruchsentfernung': {
+      id: '/leistungen/orsun-geruchsentfernung'
+      path: '/orsun-geruchsentfernung'
+      fullPath: '/leistungen/orsun-geruchsentfernung'
+      preLoaderRoute: typeof LeistungenOrsunGeruchsentfernungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/nano-versiegelung': {
+      id: '/leistungen/nano-versiegelung'
+      path: '/nano-versiegelung'
+      fullPath: '/leistungen/nano-versiegelung'
+      preLoaderRoute: typeof LeistungenNanoVersiegelungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/motorwaesche': {
+      id: '/leistungen/motorwaesche'
+      path: '/motorwaesche'
+      fullPath: '/leistungen/motorwaesche'
+      preLoaderRoute: typeof LeistungenMotorwaescheRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/lackaufbereitung': {
+      id: '/leistungen/lackaufbereitung'
+      path: '/lackaufbereitung'
+      fullPath: '/leistungen/lackaufbereitung'
+      preLoaderRoute: typeof LeistungenLackaufbereitungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/innenreinigung': {
+      id: '/leistungen/innenreinigung'
+      path: '/innenreinigung'
+      fullPath: '/leistungen/innenreinigung'
+      preLoaderRoute: typeof LeistungenInnenreinigungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/hochglanzversiegelung': {
+      id: '/leistungen/hochglanzversiegelung'
+      path: '/hochglanzversiegelung'
+      fullPath: '/leistungen/hochglanzversiegelung'
+      preLoaderRoute: typeof LeistungenHochglanzversiegelungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/folienentfernung': {
+      id: '/leistungen/folienentfernung'
+      path: '/folienentfernung'
+      fullPath: '/leistungen/folienentfernung'
+      preLoaderRoute: typeof LeistungenFolienentfernungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/carnauba-wachs': {
+      id: '/leistungen/carnauba-wachs'
+      path: '/carnauba-wachs'
+      fullPath: '/leistungen/carnauba-wachs'
+      preLoaderRoute: typeof LeistungenCarnaubaWachsRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
   }
 }
+
+interface LeistungenRouteChildren {
+  LeistungenCarnaubaWachsRoute: typeof LeistungenCarnaubaWachsRoute
+  LeistungenFolienentfernungRoute: typeof LeistungenFolienentfernungRoute
+  LeistungenHochglanzversiegelungRoute: typeof LeistungenHochglanzversiegelungRoute
+  LeistungenInnenreinigungRoute: typeof LeistungenInnenreinigungRoute
+  LeistungenLackaufbereitungRoute: typeof LeistungenLackaufbereitungRoute
+  LeistungenMotorwaescheRoute: typeof LeistungenMotorwaescheRoute
+  LeistungenNanoVersiegelungRoute: typeof LeistungenNanoVersiegelungRoute
+  LeistungenOrsunGeruchsentfernungRoute: typeof LeistungenOrsunGeruchsentfernungRoute
+  LeistungenPolsterLederRoute: typeof LeistungenPolsterLederRoute
+  LeistungenVerkaufsaufbereitungRoute: typeof LeistungenVerkaufsaufbereitungRoute
+  LeistungenWohnwagenAufbereitungRoute: typeof LeistungenWohnwagenAufbereitungRoute
+  LeistungenIndexRoute: typeof LeistungenIndexRoute
+}
+
+const LeistungenRouteChildren: LeistungenRouteChildren = {
+  LeistungenCarnaubaWachsRoute: LeistungenCarnaubaWachsRoute,
+  LeistungenFolienentfernungRoute: LeistungenFolienentfernungRoute,
+  LeistungenHochglanzversiegelungRoute: LeistungenHochglanzversiegelungRoute,
+  LeistungenInnenreinigungRoute: LeistungenInnenreinigungRoute,
+  LeistungenLackaufbereitungRoute: LeistungenLackaufbereitungRoute,
+  LeistungenMotorwaescheRoute: LeistungenMotorwaescheRoute,
+  LeistungenNanoVersiegelungRoute: LeistungenNanoVersiegelungRoute,
+  LeistungenOrsunGeruchsentfernungRoute: LeistungenOrsunGeruchsentfernungRoute,
+  LeistungenPolsterLederRoute: LeistungenPolsterLederRoute,
+  LeistungenVerkaufsaufbereitungRoute: LeistungenVerkaufsaufbereitungRoute,
+  LeistungenWohnwagenAufbereitungRoute: LeistungenWohnwagenAufbereitungRoute,
+  LeistungenIndexRoute: LeistungenIndexRoute,
+}
+
+const LeistungenRouteWithChildren = LeistungenRoute._addFileChildren(
+  LeistungenRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DatenschutzRoute: DatenschutzRoute,
   GalerieRoute: GalerieRoute,
   ImpressumRoute: ImpressumRoute,
+  LeistungenRoute: LeistungenRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport

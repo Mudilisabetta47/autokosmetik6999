@@ -1,6 +1,42 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, CheckCircle2, ArrowRight, ArrowLeft, Clock, Shield } from "lucide-react";
 import logoLight from "@/assets/logo-light.png";
+import amgGtFront from "@/assets/amg-gt-schwarz-front.jpg.asset.json";
+import amgGtShop from "@/assets/amg-gt-schwarz-shop.jpg.asset.json";
+import bmwM850Front from "@/assets/bmw-m850i-cabrio-front.jpg.asset.json";
+import bmwM850Heck from "@/assets/bmw-m850i-cabrio-heck.jpg.asset.json";
+import bmwM850Seite from "@/assets/bmw-m850i-cabrio-seite.jpg.asset.json";
+import bmwX6m40 from "@/assets/bmw-x6-m40i-heck.jpg.asset.json";
+import bmwX6Heck from "@/assets/bmw-x6-schwarz-heck.jpg.asset.json";
+import g63Front from "@/assets/g63-amg-weiss-front.jpg.asset.json";
+import g63HeckShop from "@/assets/g63-amg-weiss-heck-shop.jpg.asset.json";
+import g63Heck from "@/assets/g63-amg-weiss-heck.jpg.asset.json";
+import mercCCabrio from "@/assets/mercedes-c-cabrio-grau.jpg.asset.json";
+import porsche911 from "@/assets/porsche-911-carrera-s-schwarz.jpg.asset.json";
+import porsche924Seite from "@/assets/porsche-924-rot-seite.jpg.asset.json";
+import porsche924 from "@/assets/porsche-924-rot.jpg.asset.json";
+import porsche991 from "@/assets/porsche-991-schwarz-seite.jpg.asset.json";
+import porsche997Front from "@/assets/porsche-997-turbo-front.jpg.asset.json";
+import porsche997Heck from "@/assets/porsche-997-turbo-heck.jpg.asset.json";
+import porscheBoxster from "@/assets/porsche-boxster-schwarz.jpg.asset.json";
+import rangeRover from "@/assets/range-rover-sport-grau.jpg.asset.json";
+import shopFrontPorsches from "@/assets/shop-front-porsches.png.asset.json";
+
+const SERVICE_IMAGES: Record<string, { hero: string; gallery: string[] }> = {
+  "lackaufbereitung":          { hero: porsche911.url,        gallery: [porsche997Front.url, amgGtFront.url, bmwM850Seite.url] },
+  "hochglanzversiegelung":     { hero: amgGtFront.url,        gallery: [porsche991.url, bmwM850Front.url, g63Front.url] },
+  "nano-versiegelung":         { hero: porsche997Front.url,   gallery: [porsche911.url, bmwX6Heck.url, amgGtShop.url] },
+  "carnauba-wachs":            { hero: bmwM850Front.url,      gallery: [porsche924.url, mercCCabrio.url, porsche991.url] },
+  "innenreinigung":            { hero: mercCCabrio.url,       gallery: [bmwM850Heck.url, porsche924Seite.url, rangeRover.url] },
+  "polster-leder":             { hero: bmwM850Heck.url,       gallery: [mercCCabrio.url, rangeRover.url, porsche911.url] },
+  "orsun-geruchsentfernung":   { hero: rangeRover.url,        gallery: [mercCCabrio.url, bmwX6m40.url, porscheBoxster.url] },
+  "motorwaesche":              { hero: g63Heck.url,           gallery: [g63HeckShop.url, bmwX6m40.url, porsche997Heck.url] },
+  "folienentfernung":          { hero: porsche924.url,        gallery: [porsche924Seite.url, porscheBoxster.url, amgGtShop.url] },
+  "verkaufsaufbereitung":      { hero: shopFrontPorsches.url, gallery: [porsche991.url, bmwM850Seite.url, mercCCabrio.url] },
+  "wohnwagen-aufbereitung":    { hero: bmwX6Heck.url,         gallery: [bmwX6m40.url, rangeRover.url, g63Front.url] },
+};
+
+const FALLBACK_IMAGES = { hero: amgGtFront.url, gallery: [porsche911.url, bmwM850Front.url, g63Front.url] };
 
 const TEL = "+4915234551063";
 const TEL_DISPLAY = "0152 / 345 510 63";
